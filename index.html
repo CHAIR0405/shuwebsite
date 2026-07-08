@@ -3,138 +3,171 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shu Kinouchi 木ノ内　周</title>
+  <meta name="description" content="Shu Kinouchi is a Japanese dancer and choreographer based in Los Angeles."/>
+  <title>Shu Kinouchi 木ノ内 周</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Space+Mono:wght@400&family=Noto+Serif+JP:wght@300;400&display=swap');
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root { --ink: #1a1814; --paper: #f9f8f5; --muted: #666; --rule: #d8d5ce; --serif: 'EB Garamond', Georgia, serif; --mono: 'Space Mono', monospace; --jp: 'Noto Serif JP', serif; }
-    body { background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 1.05rem; line-height: 1.6; }
-    body.ja { font-family: var(--jp); }
-    body.ja .site-name { font-family: var(--jp); font-style: normal; font-weight: 300; }
-    a { color: inherit; text-decoration: none; }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    :root{
+      --paper:#faf8f3;
+      --paper2:#f3e8dd;
+      --kuchiba:#c98252;
+      --kuchiba-soft:#e4c6a7;
+      --ink:#201812;
+      --muted:#796b60;
+      --rule:#decbb8;
+      --accent:#c47d4a;
+      --serif:'EB Garamond',Georgia,serif;
+      --mono:'Space Mono',monospace;
+      --jp:'Noto Serif JP',serif;
+    }
+    body{background:
+      radial-gradient(circle at 100% 100%, rgba(201,130,82,.40) 0%, rgba(228,198,167,.26) 28%, rgba(250,248,243,0) 58%),
+      linear-gradient(135deg,var(--paper) 0%,var(--paper2) 58%,var(--kuchiba-soft) 100%);
+      color:var(--ink);font-family:var(--serif);font-size:1.05rem;line-height:1.6;min-height:100vh;}
+    body.ja{font-family:var(--jp);}
+    a{color:inherit;text-decoration:none;}
+    a:hover{text-decoration:underline;}
 
-    header { padding: 2rem 2.5rem 1.5rem; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; }
-    .site-name { font-family: var(--serif); font-size: 1.05rem; font-style: italic; cursor: pointer; color: var(--ink); }
-    .header-right { font-family: var(--mono); font-size: 0.68rem; display: flex; gap: 2rem; color: var(--muted); letter-spacing: 0.04em; align-items: center; }
-    .lang-toggle { display: flex; gap: 0.5rem; align-items: center; }
-    .lang-btn { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.06em; background: none; border: none; cursor: pointer; color: var(--muted); padding: 0; }
-    .lang-btn.active { color: var(--ink); border-bottom: 1px solid var(--ink); }
-    .lang-sep { color: #c0bcb5; }
+    /* LAYOUT */
+    .layout{display:grid;grid-template-columns:220px 1fr;min-height:100vh;}
 
-    .layout { display: grid; grid-template-columns: 220px 1fr; min-height: calc(100vh - 62px); }
-    nav { padding: 2.5rem 2rem 2.5rem 2.5rem; border-right: 1px solid var(--rule); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.04em; }
-    body.ja nav { font-family: var(--jp); font-size: 0.8rem; letter-spacing: 0.02em; }
-    nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
-    nav li a { color: var(--muted); transition: color 0.15s; cursor: pointer; display: block; }
-    nav li a:hover, nav li a.active { color: var(--ink); text-decoration: none; }
+    /* SIDEBAR */
+    aside{border-right:1px solid var(--rule);padding:2.5rem 2rem 2.5rem 2.5rem;display:flex;flex-direction:column;justify-content:space-between;position:sticky;top:0;height:100vh;background:rgba(250,248,243,.18);backdrop-filter:blur(6px);}
+    .site-name{font-family:var(--serif);font-style:italic;font-size:1.05rem;line-height:1.45;cursor:pointer;}
+    .site-name .jp{font-family:var(--jp);font-style:normal;font-weight:300;font-size:.92rem;color:var(--muted);display:block;margin-top:2px;}
+    body.ja .site-name{font-style:normal;font-weight:300;}
 
-    main { padding: 2.5rem 3rem 4rem; max-width: 720px; }
-    .page { display: none; }
-    .page.active { display: block; animation: fadeIn 0.2s ease; }
-    @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+    nav{margin-top:2.5rem;display:flex;flex-direction:column;gap:.9rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;}
+    body.ja nav{font-family:var(--jp);font-size:.8rem;letter-spacing:.02em;}
+    nav a{color:var(--muted);transition:color .15s;}
+    nav a:hover,nav a.active{color:var(--ink);text-decoration:none;}
 
-    .home-title { font-size: clamp(2rem,4vw,2.8rem); font-weight: 400; line-height: 1.15; margin-bottom: 2rem; font-style: italic; color: var(--ink); }
-    body.ja .home-title { font-style: normal; font-weight: 300; line-height: 1.5; }
-    .home-intro { font-size: 1.05rem; line-height: 1.8; color: #3a3630; max-width: 520px; margin-bottom: 2rem; }
+    .aside-footer{font-family:var(--mono);font-size:.62rem;color:var(--muted);letter-spacing:.04em;line-height:1.7;}
+    body.ja .aside-footer{font-family:var(--jp);}
 
-    .upcoming-block { border-top: 1px solid var(--rule); padding-top: 1.2rem; margin-bottom: 2rem; }
-    .upcoming-head { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; }
-    body.ja .upcoming-head { font-family: var(--jp); text-transform: none; letter-spacing: 0.06em; }
-    .upcoming-head::after { content: ''; flex: 1; border-top: 1px solid var(--rule); }
-    .upcoming-row { display: grid; grid-template-columns: 110px 90px 1fr; gap: 0.6rem; padding: 0.35rem 0; align-items: baseline; }
-    .up-date { font-family: var(--mono); font-size: 0.62rem; color: var(--muted); }
-    .up-role { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); letter-spacing: 0.04em; }
-    body.ja .up-role { font-family: var(--jp); font-size: 0.65rem; }
-    .up-title { font-family: var(--serif); font-size: 0.95rem; font-style: italic; color: var(--ink); }
-    body.ja .up-title { font-style: normal; font-weight: 300; }
-    .up-title a:hover { text-decoration: underline; }
-    .up-venue { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); margin-top: 0.1rem; }
-    body.ja .up-venue { font-family: var(--jp); }
+    /* MAIN */
+    main{padding:2.5rem 3rem 5rem;max-width:740px;}
 
-    .home-links { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.04em; display: flex; flex-direction: column; gap: 0.6rem; }
-    body.ja .home-links { font-family: var(--jp); font-size: 0.82rem; }
-    .home-links a { color: var(--muted); cursor: pointer; }
-    .home-links a:hover { color: var(--ink); }
+    .topline{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--rule);padding-bottom:1.2rem;margin-bottom:3rem;font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:.04em;}
+    .lang-toggle{display:flex;gap:.5rem;align-items:center;}
+    .lang-btn{font-family:var(--mono);font-size:.65rem;letter-spacing:.06em;background:none;border:none;cursor:pointer;color:var(--muted);padding:0;}
+    .lang-btn.active{color:var(--ink);border-bottom:1px solid var(--ink);}
+    .lang-sep{color:var(--rule);}
 
-    h2.section-head { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 2rem; }
-    body.ja h2.section-head { font-family: var(--jp); letter-spacing: 0.06em; text-transform: none; }
+    /* HOME */
+    .home-title{font-size:clamp(2rem,4vw,2.8rem);font-weight:400;line-height:1.15;margin-bottom:2rem;font-style:italic;color:var(--ink);}
+    body.ja .home-title{font-style:normal;font-weight:300;line-height:1.5;}
+    .home-intro{font-size:1.05rem;line-height:1.8;color:#4a3d33;max-width:520px;margin-bottom:2rem;}
 
-    .work-category { margin-bottom: 3.5rem; }
-    .cat-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--rule); padding-bottom: 0.6rem; }
-    body.ja .cat-label { font-family: var(--jp); text-transform: none; letter-spacing: 0.06em; }
-    .year-row { display: grid; grid-template-columns: 52px 1fr; gap: 1.2rem; border-bottom: 1px solid var(--rule); padding: 0.85rem 0; align-items: baseline; }
-    .yr { font-family: var(--mono); font-size: 0.62rem; color: var(--muted); padding-top: 2px; }
-    .entries { display: flex; flex-direction: column; gap: 0.65rem; }
-    .entry-title { font-style: italic; font-size: 1rem; line-height: 1.4; color: var(--ink); }
-    body.ja .entry-title { font-style: normal; font-weight: 300; }
-    .entry-sub { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin-top: 0.1rem; }
-    body.ja .entry-sub { font-family: var(--jp); }
-    .role { font-style: normal; font-size: 0.78rem; color: var(--muted); }
+    .upcoming-block{border-top:1px solid var(--rule);padding-top:1.2rem;margin-bottom:2rem;}
+    .upcoming-head{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem;}
+    body.ja .upcoming-head{font-family:var(--jp);text-transform:none;letter-spacing:.06em;}
+    .upcoming-head::after{content:'';flex:1;border-top:1px solid var(--rule);}
+    .upcoming-row{display:grid;grid-template-columns:110px 90px 1fr;gap:.6rem;padding:.35rem 0;align-items:baseline;}
+    .up-date{font-family:var(--mono);font-size:.62rem;color:var(--muted);}
+    .up-role{font-family:var(--mono);font-size:.6rem;color:var(--muted);letter-spacing:.04em;}
+    body.ja .up-role{font-family:var(--jp);font-size:.65rem;}
+    .up-title{font-family:var(--serif);font-size:.95rem;font-style:italic;color:var(--ink);}
+    body.ja .up-title{font-style:normal;font-weight:300;}
+    .up-title a:hover{text-decoration:underline;}
+    .up-venue{font-family:var(--mono);font-size:.6rem;color:var(--muted);margin-top:.1rem;}
+    body.ja .up-venue{font-family:var(--jp);}
 
-    .pronouns { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 1.8rem; }
-    .about-text { font-size: 1.05rem; line-height: 1.85; color: #3a3630; max-width: 540px; }
-    .about-text p + p { margin-top: 1.2rem; }
-    body.ja .about-text { line-height: 2.1; }
+    .home-links{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;display:flex;flex-direction:column;gap:.6rem;}
+    body.ja .home-links{font-family:var(--jp);font-size:.82rem;}
+    .home-links a{color:var(--muted);cursor:pointer;}
+    .home-links a:hover{color:var(--ink);}
 
-    .press-category { margin-bottom: 3rem; }
-    .press-item { border-bottom: 1px solid var(--rule); padding: 0.85rem 0; display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: baseline; }
-    .press-item:first-of-type { border-top: 1px solid var(--rule); }
-    .press-title { font-style: italic; font-size: 1rem; line-height: 1.4; color: var(--ink); }
-    .press-title a:hover { text-decoration: underline; }
-    .press-outlet { font-family: var(--mono); font-size: 0.62rem; color: var(--muted); letter-spacing: 0.04em; white-space: nowrap; text-align: right; }
-    .press-year { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); }
+    /* PAGES */
+    .page{display:none;}
+    .page.active{display:block;animation:fadeIn .2s ease;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
 
-    .contact-block { margin-bottom: 2.5rem; }
-    .contact-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
-    body.ja .contact-label { font-family: var(--jp); text-transform: none; }
-    .contact-val { font-size: 1.05rem; color: var(--ink); }
-    .contact-form { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.4rem; }
-    .cf-field label { display: block; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
-    body.ja .cf-field label { font-family: var(--jp); text-transform: none; }
-    .cf-field input, .cf-field textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid #c8c4bc; padding: 0.4rem 0; font-family: var(--serif); font-size: 1rem; color: var(--ink); outline: none; transition: border-color 0.2s; resize: none; }
-    .cf-field input::placeholder, .cf-field textarea::placeholder { color: var(--muted); }
-    .cf-field input:focus, .cf-field textarea:focus { border-color: var(--ink); }
-    .cf-submit { align-self: flex-start; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; background: none; border: 1px solid var(--ink); padding: 0.55rem 1.4rem; cursor: pointer; color: var(--ink); transition: background 0.2s, color 0.2s; }
-    .cf-submit:hover { background: var(--ink); color: var(--paper); }
-    .form-success { display: none; font-family: var(--mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.04em; padding: 1rem 0; }
+    h2.section-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem;}
+    body.ja h2.section-head{font-family:var(--jp);letter-spacing:.06em;text-transform:none;}
 
-    footer { border-top: 1px solid var(--rule); padding: 1.2rem 2.5rem; font-family: var(--mono); font-size: 0.62rem; color: var(--muted); letter-spacing: 0.04em; display: flex; gap: 2rem; flex-wrap: wrap; justify-content: space-between; }
-    .footer-links { display: flex; gap: 1.5rem; }
-    .footer-links a { color: var(--muted); }
-    .footer-links a:hover { color: var(--ink); }
+    /* WORK */
+    .work-category{margin-bottom:3.5rem;}
+    .cat-label{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:.6rem;}
+    body.ja .cat-label{font-family:var(--jp);text-transform:none;letter-spacing:.06em;}
+    .year-row{display:grid;grid-template-columns:52px 1fr;gap:1.2rem;border-bottom:1px solid var(--rule);padding:.85rem 0;align-items:baseline;}
+    .yr{font-family:var(--mono);font-size:.62rem;color:var(--muted);padding-top:2px;}
+    .entries{display:flex;flex-direction:column;gap:.65rem;}
+    .entry-title{font-style:italic;font-size:1rem;line-height:1.4;color:var(--ink);}
+    body.ja .entry-title{font-style:normal;font-weight:300;}
+    .entry-sub{font-size:.8rem;color:var(--muted);line-height:1.5;margin-top:.1rem;}
+    body.ja .entry-sub{font-family:var(--jp);}
+    .role{font-style:normal;font-size:.78rem;color:var(--muted);}
+
+    /* ABOUT */
+    .pronouns{font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;color:var(--muted);margin-bottom:1.8rem;}
+    .about-text{font-size:1.05rem;line-height:1.85;color:#4a3d33;max-width:540px;}
+    .about-text p+p{margin-top:1.2rem;}
+    body.ja .about-text{line-height:2.1;}
+
+    /* PRESS */
+    .press-category{margin-bottom:3rem;}
+    .press-item{border-bottom:1px solid var(--rule);padding:.85rem 0;display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:baseline;}
+    .press-item:first-of-type{border-top:1px solid var(--rule);}
+    .press-title{font-style:italic;font-size:1rem;line-height:1.4;color:var(--ink);}
+    .press-title a:hover{text-decoration:underline;}
+    .press-outlet{font-family:var(--mono);font-size:.62rem;color:var(--muted);letter-spacing:.04em;white-space:nowrap;text-align:right;}
+    .press-year{font-family:var(--mono);font-size:.6rem;color:var(--muted);}
+
+    /* CONTACT */
+    .contact-block{margin-bottom:2.5rem;}
+    .contact-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+    body.ja .contact-label{font-family:var(--jp);text-transform:none;}
+    .contact-val{font-size:1.05rem;color:var(--ink);}
+    .contact-form{margin-top:2.5rem;display:flex;flex-direction:column;gap:1.4rem;}
+    .cf-field label{display:block;font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;}
+    body.ja .cf-field label{font-family:var(--jp);text-transform:none;}
+    .cf-field input,.cf-field textarea{width:100%;background:transparent;border:none;border-bottom:1px solid var(--rule);padding:.4rem 0;font-family:var(--serif);font-size:1rem;color:var(--ink);outline:none;transition:border-color .2s;resize:none;}
+    .cf-field input::placeholder,.cf-field textarea::placeholder{color:var(--muted);}
+    .cf-field input:focus,.cf-field textarea:focus{border-color:var(--accent);}
+    .cf-submit{align-self:flex-start;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;background:none;border:1px solid var(--ink);padding:.55rem 1.4rem;cursor:pointer;color:var(--ink);transition:background .2s,color .2s;}
+    .cf-submit:hover{background:var(--ink);color:var(--paper);}
+    .form-success{display:none;font-family:var(--mono);font-size:.72rem;color:var(--muted);letter-spacing:.04em;padding:1rem 0;}
+
+    footer{font-family:var(--mono);font-size:.62rem;color:var(--muted);letter-spacing:.04em;line-height:1.7;}
+    body.ja footer{font-family:var(--jp);}
   </style>
 </head>
 <body>
 
-<header>
-  <div class="site-name" onclick="show('home',document.querySelector('nav a'))">Shu Kinouchi 木ノ内　周</div>
-  <div class="header-right">
-    <span id="loc">los angeles</span>
-    <div class="lang-toggle">
-      <button class="lang-btn active" id="btn-en" onclick="setLang('en')">en</button>
-      <span class="lang-sep">/</span>
-      <button class="lang-btn" id="btn-ja" onclick="setLang('ja')">ja</button>
-    </div>
-  </div>
-</header>
-
 <div class="layout">
-  <nav>
-    <ul>
-      <li><a href="#" class="active" onclick="show('home',this)"><span data-en="+ home" data-ja="＋ ホーム">+ home</span></a></li>
-      <li><a href="#" onclick="show('work',this)"><span data-en="+ work" data-ja="＋ 作品">+ work</span></a></li>
-      <li><a href="#" onclick="show('about',this)"><span data-en="+ about" data-ja="＋ プロフィール">+ about</span></a></li>
-      <li><a href="#" onclick="show('press',this)"><span data-en="+ press" data-ja="＋ プレス">+ press</span></a></li>
-      <li><a href="#" onclick="show('contact',this)"><span data-en="+ contact" data-ja="＋ お問い合わせ">+ contact</span></a></li>
-    </ul>
-  </nav>
+  <aside>
+    <div>
+      <div class="site-name" onclick="show('home',document.querySelector('nav a'))">
+        Shu Kinouchi
+        <span class="jp">木ノ内 周</span>
+      </div>
+      <nav>
+        <a href="#" class="active" onclick="show('home',this)"><span data-en="+ home" data-ja="＋ ホーム">+ home</span></a>
+        <a href="#" onclick="show('work',this)"><span data-en="+ work" data-ja="＋ 作品">+ work</span></a>
+        <a href="#" onclick="show('about',this)"><span data-en="+ about" data-ja="＋ プロフィール">+ about</span></a>
+        <a href="#" onclick="show('press',this)"><span data-en="+ press" data-ja="＋ プレス">+ press</span></a>
+        <a href="#" onclick="show('contact',this)"><span data-en="+ contact" data-ja="＋ お問い合わせ">+ contact</span></a>
+      </nav>
+    </div>
+    <div class="aside-footer" id="aside-footer" data-en="dancer · choreographer<br>los angeles" data-ja="ダンサー・振付家<br>ロサンゼルス">dancer · choreographer<br>los angeles</div>
+  </aside>
 
   <main>
+    <div class="topline">
+      <span>shukinouchi.com</span>
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">en</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn" id="btn-ja" onclick="setLang('ja')">ja</button>
+      </div>
+    </div>
 
     <!-- HOME -->
     <div class="page active" id="page-home">
       <p class="home-title" data-en="movement, space,<br>and what happens<br>between people." data-ja="動き、空間、<br>そして人と人の<br>あいだに生まれるもの。">movement, space,<br>and what happens<br>between people.</p>
-      <p class="home-intro" data-en="Shu Kinouchi is a Japanese dancer and choreographer based in Los Angeles whose work moves between performance, theater, and installation. Through choreographic installations, he uses objects, repetition, and spatial systems to explore support, intimacy, and human disconnection." data-ja="木ノ内　周は、ロサンゼルスを拠点に活動する日本人ダンサー・振付家。パフォーマンス、演劇、インスタレーションの領域を横断する作品を発表しています。オブジェクト、反復、空間的なシステムを用いた振付インスタレーションを通じて、サポート、親密さ、そして人間の断絶を探求しています。">Shu Kinouchi is a Japanese dancer and choreographer based in Los Angeles whose work moves between performance, theater, and installation. Through choreographic installations, he uses objects, repetition, and spatial systems to explore support, intimacy, and human disconnection.</p>
+      <p class="home-intro" data-en="Shu Kinouchi is a Japanese dancer and choreographer based in Los Angeles whose work moves between performance, theater, and installation. Through choreographic installations, he uses objects, repetition, and spatial systems to explore support, intimacy, and human disconnection." data-ja="木ノ内 周は、ロサンゼルスを拠点に活動する日本人ダンサー・振付家。パフォーマンス、演劇、インスタレーションの領域を横断する作品を発表しています。オブジェクト、反復、空間的なシステムを用いた振付インスタレーションを通じて、サポート、親密さ、そして人間の断絶を探求しています。">Shu Kinouchi is a Japanese dancer and choreographer based in Los Angeles whose work moves between performance, theater, and installation. Through choreographic installations, he uses objects, repetition, and spatial systems to explore support, intimacy, and human disconnection.</p>
 
       <div class="upcoming-block">
         <div class="upcoming-head" data-en="now & upcoming" data-ja="近況・今後の予定">now & upcoming</div>
@@ -210,7 +243,7 @@
         <div class="cat-label" data-en="collaborations" data-ja="コラボレーション">collaborations</div>
         <div class="year-row"><div class="yr">2025</div><div class="entries">
           <div><div class="entry-title" data-en="Creative Lead, Everybody Dance LA! Summer Intensive" data-ja="クリエイティブ・リード、Everybody Dance LA! サマー・インテンシブ">Creative Lead, Everybody Dance LA! Summer Intensive</div><div class="entry-sub" data-en="LA Dance Project." data-ja="LA ダンス・プロジェクト。">LA Dance Project.</div></div>
-          <div><div class="entry-title" data-en="NEST" data-ja="NEST">NEST</div><div class="entry-sub" data-en="Chor. Rauf &quot;Rubberlegz&quot; Yasit. CONGRESS XII." data-ja="振付：ラウフ「ラバーレグズ」ヤシット。CONGRESS XII。">Chor. Rauf "Rubberlegz" Yasit. CONGRESS XII.</div></div>
+          <div><div class="entry-title" data-en="NEST" data-ja="NEST">NEST</div><div class="entry-sub" data-en='Chor. Rauf "Rubberlegz" Yasit. CONGRESS XII.' data-ja="振付：ラウフ「ラバーレグズ」ヤシット。CONGRESS XII。">Chor. Rauf "Rubberlegz" Yasit. CONGRESS XII.</div></div>
         </div></div>
         <div class="year-row"><div class="yr">2024</div><div class="entries">
           <div><div class="entry-title" data-en="PhotoVogue" data-ja="PhotoVogue">PhotoVogue</div><div class="entry-sub" data-en="Portrait by Dan Chan. Vogue Italia." data-ja="ダン・チャンによるポートレート。Vogue Italia。">Portrait by Dan Chan. Vogue Italia.</div></div>
@@ -232,8 +265,8 @@
       <h2 class="section-head" data-en="/ about" data-ja="／ プロフィール">/ about</h2>
       <div class="pronouns">he / him</div>
       <div class="about-text">
-        <p data-en="Shu Kinouchi is a Japanese dancer and choreographer based in Los Angeles whose work moves between performance, theater, and installation. Through choreographic installations, he uses objects, repetition, and spatial systems to explore support, intimacy, and human disconnection. His practice is shaped by cross-cultural friction and the gap between stated values and lived practice." data-ja="木ノ内　周は、ロサンゼルスを拠点に活動する日本人ダンサー・振付家。パフォーマンス、演劇、インスタレーションの領域を横断する作品を発表しています。オブジェクト、反復、空間的なシステムを用いた振付インスタレーションを通じて、サポート、親密さ、そして人間の断絶を探求。その実践は、異文化間の摩擦と、表明された価値と生きられた実践のあいだのギャップによって形成されています。">Shu Kinouchi is a Japanese dancer and choreographer based in Los Angeles whose work moves between performance, theater, and installation. Through choreographic installations, he uses objects, repetition, and spatial systems to explore support, intimacy, and human disconnection. His practice is shaped by cross-cultural friction and the gap between stated values and lived practice.</p>
-        <p data-en="Kinouchi has performed with L.A. Dance Project since 2020, and previously with Houston Ballet and Tulsa Ballet. He trained at Hamburg Ballet School and the Jacqueline Kennedy Onassis School at American Ballet Theatre. Throughout his career he has collaborated with choreographers including Aszure Barton, William Forsythe, Christopher Wheeldon, Jessica Lang, Stanton Welch, Ma Cong, Jodie Gates, and many others. With LADP, he has performed internationally in works by Benjamin Millepied, Bobbi Jene Smith & Or Schraiber, Rauf &quot;Rubberlegz&quot; Yasit, and Dimitri Chamblas, among others — appearing at the Sydney Opera House, Joyce Theater New York, Théâtre du Châtelet, Philharmonie de Paris, Dubai Opera, and the Museum of Islamic Art in Qatar." data-ja="2020年よりL.A. ダンス・プロジェクトに所属し、以前はヒューストン・バレエ、タルサ・バレエに在籍。ハンブルク・バレエ学校およびアメリカン・バレエ・シアターのジャクリーン・ケネディ・オナシス・スクールで訓練を受ける。これまでにアザール・バートン、ウィリアム・フォーサイス、クリストファー・ウィールドン、ジェシカ・ラング、スタントン・ウェルチ、マ・コン、ジョディ・ゲイツら著名な振付家と共演。LADPではベンジャミン・ミルピエ、ボビー・ジェーン・スミス＆オア・シュライバー、ラウフ「ラバーレグズ」ヤシット、ディミトリ・シャンブラスらの作品に出演し、シドニー・オペラハウス、ジョイス・シアター（NY）、シャトレ座、パリ・フィルハーモニー、ドバイ・オペラ、カタール・イスラム芸術博物館など各地で公演を行う。">Kinouchi has performed with L.A. Dance Project since 2020, and previously with Houston Ballet and Tulsa Ballet. He trained at Hamburg Ballet School and the Jacqueline Kennedy Onassis School at American Ballet Theatre. Throughout his career he has collaborated with choreographers including Aszure Barton, William Forsythe, Christopher Wheeldon, Jessica Lang, Stanton Welch, Ma Cong, Jodie Gates, and many others. With LADP, he has performed internationally in works by Benjamin Millepied, Bobbi Jene Smith & Or Schraiber, Rauf "Rubberlegz" Yasit, and Dimitri Chamblas, among others — appearing at the Sydney Opera House, Joyce Theater New York, Théâtre du Châtelet, Philharmonie de Paris, Dubai Opera, and the Museum of Islamic Art in Qatar.</p>
+        <p data-en="Shu Kinouchi is a Japanese dancer and choreographer based in Los Angeles whose work moves between performance, theater, and installation. Through choreographic installations, he uses objects, repetition, and spatial systems to explore support, intimacy, and human disconnection. His practice is shaped by cross-cultural friction and the gap between stated values and lived practice." data-ja="木ノ内 周は、ロサンゼルスを拠点に活動する日本人ダンサー・振付家。パフォーマンス、演劇、インスタレーションの領域を横断する作品を発表しています。オブジェクト、反復、空間的なシステムを用いた振付インスタレーションを通じて、サポート、親密さ、そして人間の断絶を探求。その実践は、異文化間の摩擦と、表明された価値と生きられた実践のあいだのギャップによって形成されています。">Shu Kinouchi is a Japanese dancer and choreographer based in Los Angeles whose work moves between performance, theater, and installation. Through choreographic installations, he uses objects, repetition, and spatial systems to explore support, intimacy, and human disconnection. His practice is shaped by cross-cultural friction and the gap between stated values and lived practice.</p>
+        <p data-en='Kinouchi has performed with L.A. Dance Project since 2020, and previously with Houston Ballet and Tulsa Ballet. He trained at Hamburg Ballet School and the Jacqueline Kennedy Onassis School at American Ballet Theatre. Throughout his career he has collaborated with choreographers including Aszure Barton, William Forsythe, Christopher Wheeldon, Jessica Lang, Stanton Welch, Ma Cong, Jodie Gates, and many others. With LADP, he has performed internationally in works by Benjamin Millepied, Bobbi Jene Smith &amp; Or Schraiber, Rauf "Rubberlegz" Yasit, and Dimitri Chamblas, among others — appearing at the Sydney Opera House, Joyce Theater New York, Théâtre du Châtelet, Philharmonie de Paris, Dubai Opera, and the Museum of Islamic Art in Qatar.' data-ja="2020年よりL.A. ダンス・プロジェクトに所属し、以前はヒューストン・バレエ、タルサ・バレエに在籍。ハンブルク・バレエ学校およびアメリカン・バレエ・シアターのジャクリーン・ケネディ・オナシス・スクールで訓練を受ける。これまでにアザール・バートン、ウィリアム・フォーサイス、クリストファー・ウィールドン、ジェシカ・ラング、スタントン・ウェルチ、マ・コン、ジョディ・ゲイツら著名な振付家と共演。LADPではベンジャミン・ミルピエ、ボビー・ジェーン・スミス＆オア・シュライバー、ラウフ「ラバーレグズ」ヤシット、ディミトリ・シャンブラスらの作品に出演し、シドニー・オペラハウス、ジョイス・シアター（NY）、シャトレ座、パリ・フィルハーモニー、ドバイ・オペラ、カタール・イスラム芸術博物館など各地で公演。">Kinouchi has performed with L.A. Dance Project since 2020, and previously with Houston Ballet and Tulsa Ballet. He trained at Hamburg Ballet School and the Jacqueline Kennedy Onassis School at American Ballet Theatre. Throughout his career he has collaborated with choreographers including Aszure Barton, William Forsythe, Christopher Wheeldon, Jessica Lang, Stanton Welch, Ma Cong, Jodie Gates, and many others. With LADP, he has performed internationally in works by Benjamin Millepied, Bobbi Jene Smith &amp; Or Schraiber, Rauf "Rubberlegz" Yasit, and Dimitri Chamblas, among others — appearing at the Sydney Opera House, Joyce Theater New York, Théâtre du Châtelet, Philharmonie de Paris, Dubai Opera, and the Museum of Islamic Art in Qatar.</p>
         <p data-en="As a freelance artist, Kinouchi was featured in PhotoVogue in 2024 in a portrait by Dan Chan, performed a lead solo in RZA's production A Ballet Through Mud, and his performance in the experimental film SHU (周) by Mike Schwartz was selected for the LA Dance Film Festival. In 2025, he serves as Creative Lead for the Everybody Dance LA! Summer Intensive at LA Dance Project." data-ja="フリーランスのアーティストとして、2024年にダン・チャンによるポートレートでPhotoVogueに掲載。RZAのプロダクション『A Ballet Through Mud』でリードソロを担当。マイク・シュワルツによる実験映画『SHU（周）』はLAダンス映画祭に選出された。2025年にはL.A. ダンス・プロジェクトにおける「Everybody Dance LA！サマー・インテンシブ」のクリエイティブ・リードを務める。">As a freelance artist, Kinouchi was featured in PhotoVogue in 2024 in a portrait by Dan Chan, performed a lead solo in RZA's production A Ballet Through Mud, and his performance in the experimental film SHU (周) by Mike Schwartz was selected for the LA Dance Film Festival. In 2025, he serves as Creative Lead for the Everybody Dance LA! Summer Intensive at LA Dance Project.</p>
       </div>
     </div>
@@ -241,19 +274,11 @@
     <!-- PRESS -->
     <div class="page" id="page-press">
       <h2 class="section-head" data-en="/ press" data-ja="／ プレス">/ press</h2>
-
       <div class="press-category">
         <div class="cat-label" data-en="on his choreography" data-ja="振付作品について">on his choreography</div>
-        <div class="press-item">
-          <div class="press-title"><a href="https://www.ladancechronicle.com/navigating-purpose-and-perfection-in-shu-kinouchis-wall-body/" target="_blank">Navigating purpose and perfection in Shu Kinouchi's Wall-Body</a></div>
-          <div class="press-outlet">LA Dance Chronicle<br><span class="press-year">2026</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title"><a href="https://fjordreview.com/blogs/all/back-against-the-wall" target="_blank">Wall Flowers</a></div>
-          <div class="press-outlet">Fjord Review<br><span class="press-year">2026</span></div>
-        </div>
+        <div class="press-item"><div class="press-title"><a href="https://www.ladancechronicle.com/navigating-purpose-and-perfection-in-shu-kinouchis-wall-body/" target="_blank">Navigating purpose and perfection in Shu Kinouchi's Wall-Body</a></div><div class="press-outlet">LA Dance Chronicle<br><span class="press-year">2026</span></div></div>
+        <div class="press-item"><div class="press-title"><a href="https://fjordreview.com/blogs/all/back-against-the-wall" target="_blank">Wall Flowers</a></div><div class="press-outlet">Fjord Review<br><span class="press-year">2026</span></div></div>
       </div>
-
       <div class="press-category">
         <div class="cat-label" data-en="on his dancing" data-ja="ダンスについて">on his dancing</div>
         <div class="press-item"><div class="press-title"><a href="https://sdwoodruff.wordpress.com/2024/11/04/millepied-la-dance-projects-romeo-and-juliet-suite-an-intense-vision-for-stage-and-cinema/" target="_blank">Romeo and Juliet Suite: An Intense Vision for Stage and Cinema</a></div><div class="press-outlet">Los Angeles Dance Review<br><span class="press-year">2024</span></div></div>
@@ -267,7 +292,6 @@
         <div class="press-item"><div class="press-title"><a href="http://www.houstonpress.com/arts/houston-ballets-new-the-nutcracker-a-superb-production-8979974" target="_blank">Houston Ballet's New Nutcracker: A Superb Production</a></div><div class="press-outlet">Houston Press<br><span class="press-year">2016</span></div></div>
         <div class="press-item"><div class="press-title"><a href="https://baryshnikovarts.org/program/digital-program-baryshnikov-arts-presents-an-evening-of-new-work/" target="_blank">An Evening of New Work — digital program</a></div><div class="press-outlet">Baryshnikov Arts Center<br><span class="press-year">2025</span></div></div>
       </div>
-
       <div class="press-category">
         <div class="cat-label" data-en="appearances" data-ja="掲載・出演">appearances</div>
         <div class="press-item"><div class="press-title"><a href="https://www.latimes.com/entertainment-arts/story/2026-06-23/ojai-music-festival-turns-80-with-help-of-esa-pekka-salonen" target="_blank">Ojai Music Festival turns 80 with help of Esa-Pekka Salonen</a></div><div class="press-outlet">Los Angeles Times<br><span class="press-year">2026</span></div></div>
@@ -313,18 +337,9 @@
         <div class="contact-val" data-en="Los Angeles, California" data-ja="カリフォルニア州ロサンゼルス">Los Angeles, California</div>
       </div>
       <form id="contact-form" action="https://formspree.io/f/mbdvbpeo" method="POST" class="contact-form">
-        <div class="cf-field">
-          <label data-en="name" data-ja="お名前">name</label>
-          <input type="text" name="name" placeholder="Your name" required/>
-        </div>
-        <div class="cf-field">
-          <label data-en="email" data-ja="メールアドレス">email</label>
-          <input type="email" name="email" placeholder="your@email.com" required/>
-        </div>
-        <div class="cf-field">
-          <label data-en="message" data-ja="メッセージ">message</label>
-          <textarea name="message" rows="4" placeholder="Commission, collaboration, residency…" required></textarea>
-        </div>
+        <div class="cf-field"><label data-en="name" data-ja="お名前">name</label><input type="text" name="name" placeholder="Your name" required/></div>
+        <div class="cf-field"><label data-en="email" data-ja="メールアドレス">email</label><input type="email" name="email" placeholder="your@email.com" required/></div>
+        <div class="cf-field"><label data-en="message" data-ja="メッセージ">message</label><textarea name="message" rows="4" placeholder="Commission, collaboration, residency…" required></textarea></div>
         <button type="submit" class="cf-submit" data-en="send" data-ja="送信">send</button>
       </form>
       <p class="form-success" id="form-success" data-en="Thank you — message received." data-ja="ありがとうございます。メッセージを受け取りました。">Thank you — message received.</p>
@@ -333,31 +348,19 @@
   </main>
 </div>
 
-<footer>
-  <span>© 2026 Shu Kinouchi 木ノ内　周</span>
-  <div class="footer-links">
-    <a href="https://www.instagram.com/shushuagogo/" target="_blank">instagram</a>
-    <a href="https://www.youtube.com/@shu1992" target="_blank">youtube</a>
-    <a href="https://ladanceproject.org/dancer/shu-kinouchi/" target="_blank">ladp</a>
-  </div>
-  <span id="fsub" data-en="choreographer · dancer · los angeles" data-ja="振付家・ダンサー・ロサンゼルス">choreographer · dancer · los angeles</span>
-</footer>
-
 <script>
   function setLang(lang){
     document.body.className=lang==='ja'?'ja':'';
     document.getElementById('btn-en').classList.toggle('active',lang==='en');
     document.getElementById('btn-ja').classList.toggle('active',lang==='ja');
-    document.getElementById('loc').textContent=lang==='ja'?'ロサンゼルス':'los angeles';
     document.querySelectorAll('[data-en]').forEach(el=>{
       if(el.tagName==='INPUT'||el.tagName==='TEXTAREA')return;
       const v=el.getAttribute('data-'+lang);
       if(v!==null){
-        if(el.tagName==='BUTTON'||el.tagName==='A'){el.textContent=v;}
+        if(el.tagName==='BUTTON'){el.textContent=v;}
         else{el.innerHTML=v;}
       }
     });
-    document.getElementById('fsub').textContent=document.getElementById('fsub').getAttribute('data-'+lang);
   }
   function show(id,el){
     document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
@@ -367,20 +370,14 @@
   }
   function getNav(s){return document.querySelector('nav a[onclick*="\''+s+'\'"]');}
   document.querySelectorAll('nav a,.home-links a').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
-
   const form=document.getElementById('contact-form');
   form.addEventListener('submit',async function(e){
     e.preventDefault();
     const btn=form.querySelector('.cf-submit');
     btn.textContent='…';btn.disabled=true;
     const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-    if(res.ok){
-      form.style.display='none';
-      const s=document.getElementById('form-success');
-      s.style.display='block';
-    } else {
-      btn.textContent='try again';btn.disabled=false;
-    }
+    if(res.ok){form.style.display='none';document.getElementById('form-success').style.display='block';}
+    else{btn.textContent='try again';btn.disabled=false;}
   });
 </script>
 </body>
