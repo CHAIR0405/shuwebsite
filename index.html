@@ -1,170 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shu Kinouchi | Choreographer and Dancer</title>
-  <meta name="description" content="Shu Kinouchi is a Japanese dancer and choreographer based in Los Angeles, working between dance, theater, installation, objects, and architecture.">
-  <meta property="og:title" content="Shu Kinouchi | Choreographer and Dancer">
-  <meta property="og:description" content="Dance, theater, installation, objects, architecture, and the body in negotiation with designed systems.">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Space+Mono:wght@400&family=Noto+Serif+JP:wght@300;400&display=swap');
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  :root { --ink: #1a1814; --paper: #f9f8f5; --muted: #666; --rule: #d8d5ce; --serif: 'EB Garamond', Georgia, serif; --mono: 'Space Mono', monospace; --jp: 'Noto Serif JP', serif; }
-  body { background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 1.05rem; line-height: 1.6; }
-  body.ja { font-family: var(--jp); }
-  body.ja .site-name { font-family: var(--jp); font-style: normal; font-weight: 300; }
-  a { color: inherit; text-decoration: none; }
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shu Kinouchi 木ノ内　周</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Space+Mono:wght@400&family=Noto+Serif+JP:wght@300;400&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --ink: #1a1814; --paper: #f9f8f5; --muted: #666; --rule: #d8d5ce; --serif: 'EB Garamond', Georgia, serif; --mono: 'Space Mono', monospace; --jp: 'Noto Serif JP', serif; }
+    body { background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 1.05rem; line-height: 1.6; }
+    body.ja { font-family: var(--jp); }
+    body.ja .site-name { font-family: var(--jp); font-style: normal; font-weight: 300; }
+    a { color: inherit; text-decoration: none; }
 
-  header { padding: 2rem 2.5rem 1.5rem; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; }
-  .site-name { font-family: var(--serif); font-size: 1.05rem; font-style: italic; cursor: pointer; color: var(--ink); }
-  .header-right { font-family: var(--mono); font-size: 0.68rem; display: flex; gap: 2rem; color: var(--muted); letter-spacing: 0.04em; align-items: center; }
-  .lang-toggle { display: flex; gap: 0.5rem; align-items: center; }
-  .lang-btn { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.06em; background: none; border: none; cursor: pointer; color: var(--muted); padding: 0; }
-  .lang-btn.active { color: var(--ink); border-bottom: 1px solid var(--ink); }
-  .lang-sep { color: #c0bcb5; }
+    header { padding: 2rem 2.5rem 1.5rem; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; }
+    .site-name { font-family: var(--serif); font-size: 1.05rem; font-style: italic; cursor: pointer; color: var(--ink); }
+    .header-right { font-family: var(--mono); font-size: 0.68rem; display: flex; gap: 2rem; color: var(--muted); letter-spacing: 0.04em; align-items: center; }
+    .lang-toggle { display: flex; gap: 0.5rem; align-items: center; }
+    .lang-btn { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.06em; background: none; border: none; cursor: pointer; color: var(--muted); padding: 0; }
+    .lang-btn.active { color: var(--ink); border-bottom: 1px solid var(--ink); }
+    .lang-sep { color: #c0bcb5; }
 
-  .layout { display: grid; grid-template-columns: 220px 1fr; min-height: calc(100vh - 62px); }
-  nav { padding: 2.5rem 2rem 2.5rem 2.5rem; border-right: 1px solid var(--rule); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.04em; }
-  body.ja nav { font-family: var(--jp); font-size: 0.8rem; letter-spacing: 0.02em; }
-  nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
-  nav li a { color: var(--muted); transition: color 0.15s; cursor: pointer; display: block; }
-  nav li a:hover, nav li a.active { color: var(--ink); text-decoration: none; }
+    .layout { display: grid; grid-template-columns: 220px 1fr; min-height: calc(100vh - 62px); }
+    nav { padding: 2.5rem 2rem 2.5rem 2.5rem; border-right: 1px solid var(--rule); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.04em; }
+    body.ja nav { font-family: var(--jp); font-size: 0.8rem; letter-spacing: 0.02em; }
+    nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+    nav li a { color: var(--muted); transition: color 0.15s; cursor: pointer; display: block; }
+    nav li a:hover, nav li a.active { color: var(--ink); text-decoration: none; }
 
-  main { padding: 2.5rem 3rem 4rem; max-width: 720px; }
-  .page { display: none; }
-  .page.active { display: block; animation: fadeIn 0.2s ease; }
-  @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+    main { padding: 2.5rem 3rem 4rem; max-width: 720px; }
+    .page { display: none; }
+    .page.active { display: block; animation: fadeIn 0.2s ease; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
 
-  /* HOME */
-  .home-title { font-size: clamp(2rem,4vw,2.8rem); font-weight: 400; line-height: 1.15; margin-bottom: 2rem; font-style: italic; color: var(--ink); }
-  body.ja .home-title { font-style: normal; font-weight: 300; line-height: 1.5; }
-  .home-intro { font-size: 1.05rem; line-height: 1.8; color: #3a3630; max-width: 520px; margin-bottom: 2rem; }
-  .home-id { margin-bottom: 1.6rem; }
-  .home-role { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; color: var(--muted); line-height: 1.7; text-transform: lowercase; }
-  body.ja .home-role { font-family: var(--jp); font-size: 0.76rem; letter-spacing: 0.03em; }
-  .home-image { width: 100%; max-width: 660px; margin-bottom: 1.3rem; border-bottom: 1px solid var(--rule); }
-  .home-image img { display: block; width: 100%; height: auto; }
-  .home-image.empty { aspect-ratio: 4 / 5; border: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; color: var(--muted); font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; }
-  .home-image.empty::after { content: 'home image'; }
-  .home-caption { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 2rem; }
+    .home-title { font-size: clamp(2rem,4vw,2.8rem); font-weight: 400; line-height: 1.15; margin-bottom: 2rem; font-style: italic; color: var(--ink); }
+    body.ja .home-title { font-style: normal; font-weight: 300; line-height: 1.5; }
+    .home-intro { font-size: 1.05rem; line-height: 1.8; color: #3a3630; max-width: 520px; margin-bottom: 2rem; }
 
-  .upcoming-block { border-top: 1px solid var(--rule); padding-top: 1.2rem; margin-bottom: 2rem; }
-  .upcoming-head { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; }
-  .upcoming-head::after { content: ''; flex: 1; border-top: 1px solid var(--rule); }
-  .upcoming-row { display: grid; grid-template-columns: 110px 90px 1fr; gap: 0.6rem; padding: 0.35rem 0; align-items: baseline; }
-  .up-date { font-family: var(--mono); font-size: 0.62rem; color: var(--muted); }
-  .up-role { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); letter-spacing: 0.04em; }
-  .up-title { font-family: var(--serif); font-size: 0.95rem; font-style: italic; color: var(--ink); }
-  .up-title a:hover { text-decoration: underline; }
-  .up-venue { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); margin-top: 0.1rem; }
+    .upcoming-block { border-top: 1px solid var(--rule); padding-top: 1.2rem; margin-bottom: 2rem; }
+    .upcoming-head { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; }
+    body.ja .upcoming-head { font-family: var(--jp); text-transform: none; letter-spacing: 0.06em; }
+    .upcoming-head::after { content: ''; flex: 1; border-top: 1px solid var(--rule); }
+    .upcoming-row { display: grid; grid-template-columns: 110px 90px 1fr; gap: 0.6rem; padding: 0.35rem 0; align-items: baseline; }
+    .up-date { font-family: var(--mono); font-size: 0.62rem; color: var(--muted); }
+    .up-role { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); letter-spacing: 0.04em; }
+    body.ja .up-role { font-family: var(--jp); font-size: 0.65rem; }
+    .up-title { font-family: var(--serif); font-size: 0.95rem; font-style: italic; color: var(--ink); }
+    body.ja .up-title { font-style: normal; font-weight: 300; }
+    .up-title a:hover { text-decoration: underline; }
+    .up-venue { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); margin-top: 0.1rem; }
+    body.ja .up-venue { font-family: var(--jp); }
 
-  .home-links { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.04em; display: flex; flex-direction: column; gap: 0.6rem; }
-  body.ja .home-links { font-family: var(--jp); font-size: 0.82rem; }
-  .home-links a { color: var(--muted); cursor: pointer; }
-  .home-links a:hover { color: var(--ink); }
+    .home-links { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.04em; display: flex; flex-direction: column; gap: 0.6rem; }
+    body.ja .home-links { font-family: var(--jp); font-size: 0.82rem; }
+    .home-links a { color: var(--muted); cursor: pointer; }
+    .home-links a:hover { color: var(--ink); }
 
-  /* SHARED */
-  h2.section-head { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 2rem; }
-  body.ja h2.section-head { font-family: var(--jp); letter-spacing: 0.06em; text-transform: none; }
+    h2.section-head { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 2rem; }
+    body.ja h2.section-head { font-family: var(--jp); letter-spacing: 0.06em; text-transform: none; }
 
-  /* WORK */
-  .work-category { margin-bottom: 3.5rem; }
-  .cat-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--rule); padding-bottom: 0.6rem; }
-  body.ja .cat-label { font-family: var(--jp); text-transform: none; letter-spacing: 0.06em; }
-  .year-row { display: grid; grid-template-columns: 52px 1fr; gap: 1.2rem; border-bottom: 1px solid var(--rule); padding: 0.85rem 0; align-items: baseline; }
-  .yr { font-family: var(--mono); font-size: 0.62rem; color: var(--muted); padding-top: 2px; }
-  .entries { display: flex; flex-direction: column; gap: 0.65rem; }
-  .entry-title { font-style: italic; font-size: 1rem; line-height: 1.4; color: var(--ink); }
-  body.ja .entry-title { font-style: normal; font-weight: 300; }
-  .entry-sub { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin-top: 0.1rem; }
-  .role { font-style: normal; font-size: 0.78rem; color: var(--muted); }
+    .work-category { margin-bottom: 3.5rem; }
+    .cat-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--rule); padding-bottom: 0.6rem; }
+    body.ja .cat-label { font-family: var(--jp); text-transform: none; letter-spacing: 0.06em; }
+    .year-row { display: grid; grid-template-columns: 52px 1fr; gap: 1.2rem; border-bottom: 1px solid var(--rule); padding: 0.85rem 0; align-items: baseline; }
+    .yr { font-family: var(--mono); font-size: 0.62rem; color: var(--muted); padding-top: 2px; }
+    .entries { display: flex; flex-direction: column; gap: 0.65rem; }
+    .entry-title { font-style: italic; font-size: 1rem; line-height: 1.4; color: var(--ink); }
+    body.ja .entry-title { font-style: normal; font-weight: 300; }
+    .entry-sub { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin-top: 0.1rem; }
+    body.ja .entry-sub { font-family: var(--jp); }
+    .role { font-style: normal; font-size: 0.78rem; color: var(--muted); }
 
-  /* ABOUT */
-  .pronouns { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 1.8rem; }
-  .about-portrait { width: min(100%, 420px); margin: 0 0 1.6rem; }
-  .about-portrait img { display: block; width: 100%; height: auto; }
-  .about-credit { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.08em; color: var(--muted); margin-top: 0.45rem; }
-  body.ja .about-credit { font-family: var(--jp); letter-spacing: 0.04em; }
-  .about-text { font-size: 1.05rem; line-height: 1.85; color: #3a3630; max-width: 540px; }
-  .about-text p + p { margin-top: 1.2rem; }
+    .pronouns { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 1.8rem; }
+    .about-text { font-size: 1.05rem; line-height: 1.85; color: #3a3630; max-width: 540px; }
+    .about-text p + p { margin-top: 1.2rem; }
+    body.ja .about-text { line-height: 2.1; }
 
-  /* PRESS */
-  .press-category { margin-bottom: 3rem; }
-  .press-item { border-bottom: 1px solid var(--rule); padding: 0.85rem 0; display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: baseline; }
-  .press-item:first-of-type { border-top: 1px solid var(--rule); }
-  .press-title { font-style: italic; font-size: 1rem; line-height: 1.4; color: var(--ink); }
-  .press-title a:hover { text-decoration: underline; }
-  .press-outlet { font-family: var(--mono); font-size: 0.62rem; color: var(--muted); letter-spacing: 0.04em; white-space: nowrap; text-align: right; }
-  .press-year { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); }
+    .press-category { margin-bottom: 3rem; }
+    .press-item { border-bottom: 1px solid var(--rule); padding: 0.85rem 0; display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: baseline; }
+    .press-item:first-of-type { border-top: 1px solid var(--rule); }
+    .press-title { font-style: italic; font-size: 1rem; line-height: 1.4; color: var(--ink); }
+    .press-title a:hover { text-decoration: underline; }
+    .press-outlet { font-family: var(--mono); font-size: 0.62rem; color: var(--muted); letter-spacing: 0.04em; white-space: nowrap; text-align: right; }
+    .press-year { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); }
 
-  /* CONTACT */
-  .contact-block { margin-bottom: 2.5rem; }
-  .contact-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
-  body.ja .contact-label { font-family: var(--jp); text-transform: none; }
-  .contact-val { font-size: 1.05rem; color: var(--ink); }
-  .contact-form { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.4rem; }
-  .cf-field label { display: block; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
-  body.ja .cf-field label { font-family: var(--jp); text-transform: none; }
-  .cf-field input, .cf-field textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid #c8c4bc; padding: 0.4rem 0; font-family: var(--serif); font-size: 1rem; color: var(--ink); outline: none; transition: border-color 0.2s; resize: none; }
-  .cf-field input::placeholder, .cf-field textarea::placeholder { color: var(--muted); }
-  .cf-field input:focus, .cf-field textarea:focus { border-color: var(--ink); }
-  .cf-submit { align-self: flex-start; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; background: none; border: 1px solid var(--ink); padding: 0.55rem 1.4rem; cursor: pointer; color: var(--ink); transition: background 0.2s, color 0.2s; }
-  .cf-submit:hover { background: var(--ink); color: var(--paper); }
+    .contact-block { margin-bottom: 2.5rem; }
+    .contact-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+    body.ja .contact-label { font-family: var(--jp); text-transform: none; }
+    .contact-val { font-size: 1.05rem; color: var(--ink); }
+    .contact-form { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.4rem; }
+    .cf-field label { display: block; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+    body.ja .cf-field label { font-family: var(--jp); text-transform: none; }
+    .cf-field input, .cf-field textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid #c8c4bc; padding: 0.4rem 0; font-family: var(--serif); font-size: 1rem; color: var(--ink); outline: none; transition: border-color 0.2s; resize: none; }
+    .cf-field input::placeholder, .cf-field textarea::placeholder { color: var(--muted); }
+    .cf-field input:focus, .cf-field textarea:focus { border-color: var(--ink); }
+    .cf-submit { align-self: flex-start; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; background: none; border: 1px solid var(--ink); padding: 0.55rem 1.4rem; cursor: pointer; color: var(--ink); transition: background 0.2s, color 0.2s; }
+    .cf-submit:hover { background: var(--ink); color: var(--paper); }
+    .form-success { display: none; font-family: var(--mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.04em; padding: 1rem 0; }
 
-
-  /* SELECTED PROJECTS */
-  .selected-work { border-top: 1px solid var(--rule); padding: 1.4rem 0 1.6rem; }
-  .selected-work:last-child { border-bottom: 1px solid var(--rule); }
-  .project-kicker { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; }
-  body.ja .project-kicker { font-family: var(--jp); text-transform: none; letter-spacing: 0.06em; }
-  .project-title { font-size: 1.05rem; font-style: italic; line-height: 1.35; margin-bottom: 0.25rem; }
-  body.ja .project-title { font-style: normal; font-weight: 300; }
-  .project-meta { font-family: var(--mono); font-size: 0.62rem; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 0.75rem; }
-  body.ja .project-meta { font-family: var(--jp); letter-spacing: 0.02em; font-size: 0.75rem; }
-  .project-desc { font-size: 0.9rem; line-height: 1.7; color: #3a3630; max-width: 540px; margin-bottom: 0.8rem; }
-  .project-links { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em; display: flex; flex-wrap: wrap; gap: 1rem; color: var(--muted); }
-
-  .project-gallery { display: grid; grid-template-columns: 1fr 0.62fr; gap: 0.8rem; margin: 1rem 0 0.9rem; max-width: 620px; align-items: end; }
-  .project-gallery img { display: block; width: 100%; height: auto; }
-  .project-gallery .vertical { max-width: 260px; justify-self: end; }
-  .project-links a:hover { color: var(--ink); text-decoration: underline; }
-
-  /* PRESENTING */
-  .presenting-text { font-size: 1rem; line-height: 1.8; color: #3a3630; max-width: 540px; margin-bottom: 2rem; }
-  .presenting-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
-  .presenting-card { border-top: 1px solid var(--rule); padding-top: 1rem; }
-  .presenting-card h3 { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 400; margin-bottom: 0.55rem; }
-  body.ja .presenting-card h3 { font-family: var(--jp); text-transform: none; letter-spacing: 0.06em; }
-  .presenting-card p { font-size: 0.95rem; line-height: 1.7; color: #3a3630; }
-
-  /* MOBILE */
-  @media (max-width: 760px) {
-    header { padding: 1.3rem 1.25rem 1rem; align-items: flex-start; }
-    .header-right { width: 100%; justify-content: space-between; gap: 1rem; margin-top: 0.3rem; }
-    .layout { display: block; min-height: auto; }
-    nav { border-right: none; border-bottom: 1px solid var(--rule); padding: 1rem 1.25rem; overflow-x: auto; }
-    nav ul { flex-direction: row; gap: 1rem; white-space: nowrap; }
-    main { padding: 2rem 1.25rem 3rem; max-width: none; }
-    .home-title { font-size: 2.1rem; }
-    .upcoming-row { grid-template-columns: 82px 72px 1fr; gap: 0.5rem; }
-    .year-row { grid-template-columns: 44px 1fr; gap: 0.9rem; }
-    .press-item { grid-template-columns: 1fr; gap: 0.35rem; }
-    .press-outlet { text-align: left; white-space: normal; }
-    .presenting-grid { grid-template-columns: 1fr; gap: 1.2rem; }
-    footer { padding: 1rem 1.25rem; flex-direction: column; gap: 0.7rem; }
-  }
-
-  footer { border-top: 1px solid var(--rule); padding: 1.2rem 2.5rem; font-family: var(--mono); font-size: 0.62rem; color: var(--muted); letter-spacing: 0.04em; display: flex; gap: 2rem; flex-wrap: wrap; justify-content: space-between; }
-  .footer-links { display: flex; gap: 1.5rem; }
-  .footer-links a { color: var(--muted); }
-  .footer-links a:hover { color: var(--ink); }
-</style>
+    footer { border-top: 1px solid var(--rule); padding: 1.2rem 2.5rem; font-family: var(--mono); font-size: 0.62rem; color: var(--muted); letter-spacing: 0.04em; display: flex; gap: 2rem; flex-wrap: wrap; justify-content: space-between; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { color: var(--muted); }
+    .footer-links a:hover { color: var(--ink); }
+  </style>
 </head>
 <body>
 
 <header>
-  <div class="site-name" onclick="show('home',document.querySelector('nav a'))">Shu Kinouchi 木ノ内 周</div>
+  <div class="site-name" onclick="show('home',document.querySelector('nav a'))">Shu Kinouchi 木ノ内　周</div>
   <div class="header-right">
     <span id="loc">los angeles</span>
     <div class="lang-toggle">
@@ -182,7 +125,6 @@
       <li><a href="#" onclick="show('work',this)"><span data-en="+ work" data-ja="＋ 作品">+ work</span></a></li>
       <li><a href="#" onclick="show('about',this)"><span data-en="+ about" data-ja="＋ プロフィール">+ about</span></a></li>
       <li><a href="#" onclick="show('press',this)"><span data-en="+ press" data-ja="＋ プレス">+ press</span></a></li>
-      <li><a href="#" onclick="show('presenting',this)"><span data-en="+ presenting" data-ja="＋ 上演・依頼">+ presenting</span></a></li>
       <li><a href="#" onclick="show('contact',this)"><span data-en="+ contact" data-ja="＋ お問い合わせ">+ contact</span></a></li>
     </ul>
   </nav>
@@ -191,38 +133,33 @@
 
     <!-- HOME -->
     <div class="page active" id="page-home">
-      <div class="home-id">
-        <div class="home-role" data-en="dancer / choreographer<br>Los Angeles" data-ja="ダンサー／振付家<br>ロサンゼルス">dancer / choreographer<br>Los Angeles</div>
-      </div>
-      <div class="home-image">
-        <img src="images/home.jpg" alt="WALL—BODY by Shu Kinouchi" onerror="this.style.display='none'; this.parentElement.classList.add('empty');">
-      </div>
-      <div class="home-caption" data-en="WALL—BODY · with Hiroshi Kaneko" data-ja="WALL—BODY · Hiroshi Kanekoとの共同制作">WALL—BODY · with Hiroshi Kaneko</div>
+      <p class="home-title" data-en="movement, space,<br>and what happens<br>between people." data-ja="動き、空間、<br>そして人と人の<br>あいだに生まれるもの。">movement, space,<br>and what happens<br>between people.</p>
+      <p class="home-intro" data-en="Shu Kinouchi is a Japanese dancer and choreographer based in Los Angeles whose work moves between performance, theater, and installation. Through choreographic installations, he uses objects, repetition, and spatial systems to explore support, intimacy, and human disconnection." data-ja="木ノ内　周は、ロサンゼルスを拠点に活動する日本人ダンサー・振付家。パフォーマンス、演劇、インスタレーションの領域を横断する作品を発表しています。オブジェクト、反復、空間的なシステムを用いた振付インスタレーションを通じて、サポート、親密さ、そして人間の断絶を探求しています。">Shu Kinouchi is a Japanese dancer and choreographer based in Los Angeles whose work moves between performance, theater, and installation. Through choreographic installations, he uses objects, repetition, and spatial systems to explore support, intimacy, and human disconnection.</p>
 
       <div class="upcoming-block">
-        <div class="upcoming-head">now & upcoming</div>
+        <div class="upcoming-head" data-en="now & upcoming" data-ja="近況・今後の予定">now & upcoming</div>
         <div class="upcoming-row">
           <div class="up-date">Jul 16</div>
-          <div class="up-role">dancing</div>
+          <div class="up-role" data-en="dancing" data-ja="出演">dancing</div>
           <div>
-            <div class="up-title"><a href="https://ladanceproject.org/an-evening-to-celebrate-the-santa-barbara-fund-for-new-choreography/" target="_blank">Santa Barbara Fund for New Choreography</a></div>
-            <div class="up-venue">Montecito, CA</div>
+            <div class="up-title"><a href="https://ladanceproject.org/an-evening-to-celebrate-the-santa-barbara-fund-for-new-choreography/" target="_blank" data-en="Santa Barbara Fund for New Choreography" data-ja="サンタバーバラ新振付基金">Santa Barbara Fund for New Choreography</a></div>
+            <div class="up-venue" data-en="Montecito, CA" data-ja="カリフォルニア州モンテシート">Montecito, CA</div>
           </div>
         </div>
         <div class="upcoming-row">
           <div class="up-date">Jul 27–Aug 9</div>
-          <div class="up-role">teaching</div>
+          <div class="up-role" data-en="teaching" data-ja="指導">teaching</div>
           <div>
-            <div class="up-title"><a href="https://ladanceproject.org/events/ladp-presents-movementfest-la/" target="_blank">MovementFest LA</a></div>
-            <div class="up-venue">LA Dance Project</div>
+            <div class="up-title"><a href="https://ladanceproject.org/events/ladp-presents-movementfest-la/" target="_blank" data-en="MovementFest LA" data-ja="ムーブメントフェスト LA">MovementFest LA</a></div>
+            <div class="up-venue" data-en="LA Dance Project" data-ja="LA ダンス・プロジェクト">LA Dance Project</div>
           </div>
         </div>
         <div class="upcoming-row">
           <div class="up-date">Mar 13, 2027</div>
-          <div class="up-role">choreography</div>
+          <div class="up-role" data-en="choreography" data-ja="振付">choreography</div>
           <div>
-            <div class="up-title"><a href="https://thesoraya.org/whats-on/en/jacob-jonas-the-company-and-delirium-musicum/" target="_blank">As Eternity Flows · The Soraya</a></div>
-            <div class="up-venue">Northridge, CA</div>
+            <div class="up-title"><a href="https://thesoraya.org/whats-on/en/jacob-jonas-the-company-and-delirium-musicum/" target="_blank" data-en="As Eternity Flows · The Soraya" data-ja="As Eternity Flows · ザ・ソラヤ">As Eternity Flows · The Soraya</a></div>
+            <div class="up-venue" data-en="Northridge, CA" data-ja="カリフォルニア州ノースリッジ">Northridge, CA</div>
           </div>
         </div>
       </div>
@@ -231,7 +168,6 @@
         <a onclick="show('work',getNav('work'))" data-en="→ work" data-ja="→ 作品一覧">→ work</a>
         <a onclick="show('about',getNav('about'))" data-en="→ about" data-ja="→ プロフィール">→ about</a>
         <a onclick="show('press',getNav('press'))" data-en="→ press" data-ja="→ プレス">→ press</a>
-        <a onclick="show('presenting',getNav('presenting'))" data-en="→ presenting" data-ja="→ 上演・依頼">→ presenting</a>
         <a onclick="show('contact',getNav('contact'))" data-en="→ contact" data-ja="→ お問い合わせ">→ contact</a>
       </div>
     </div>
@@ -241,92 +177,52 @@
       <h2 class="section-head" data-en="/ work" data-ja="／ 作品">/ work</h2>
 
       <div class="work-category">
-        <div class="cat-label" data-en="selected works" data-ja="主な作品">selected works</div>
-
-        <div class="selected-work">
-          <div class="project-kicker" data-en="solo performance / architecture" data-ja="ソロ・パフォーマンス／建築">solo performance / architecture</div>
-          <div class="project-title">WALL—BODY</div>
-          <div class="project-meta" data-en="2026 · choreography and performance · with Hiroshi Kaneko · LADP Presents" data-ja="2026年・振付／出演・Hiroshi Kanekoとの共同制作・LADP Presents">2026 · choreography and performance · with Hiroshi Kaneko · LADP Presents</div>
-          <div class="project-desc" data-en="A solo performance made with movable walls. The body tries to pass, lean, hide, and reach through an architecture that keeps changing." data-ja="『WALL—BODY』は、可動式の壁を用いたソロ・パフォーマンスです。身体は、変化し続ける建築の中で、通り抜け、寄りかかり、隠れ、手を伸ばそうとします。">A solo performance made with movable walls. The body tries to pass, lean, hide, and reach through an architecture that keeps changing.</div>
-          <div class="project-gallery">
-            <img src="images/wall-body-main.jpg" alt="Shu Kinouchi performing WALL—BODY with movable walls">
-            <img class="vertical" src="images/wall-body-detail.jpg" alt="Detail from WALL—BODY by Shu Kinouchi">
-          </div>
-          <div class="project-links"><a href="https://www.ladancechronicle.com/navigating-purpose-and-perfection-in-shu-kinouchis-wall-body/" target="_blank">LA Dance Chronicle</a><a href="https://fjordreview.com/blogs/all/back-against-the-wall" target="_blank">Fjord Review</a></div>
-        </div>
-
-        <div class="selected-work">
-          <div class="project-kicker" data-en="solo performance / object work" data-ja="ソロ・パフォーマンス／オブジェクト">solo performance / object work</div>
-          <div class="project-title">SHU LOVES CHAIRS: a piece about support</div>
-          <div class="project-meta" data-en="2024 · solo show · WAKAWAKA Warehouse, Los Angeles" data-ja="2024年・ソロ公演・WAKAWAKA Warehouse, Los Angeles">2024 · solo show · WAKAWAKA Warehouse, Los Angeles</div>
-          <div class="project-desc" data-en="A solo made with chairs. It begins with a simple question of support: who gives it, who receives it, and what happens when support becomes unstable." data-ja="椅子とともにつくるソロ・パフォーマンスです。支えること、支えられること、そしてその支えが不安定になる瞬間から始まります。">A solo made with chairs. It begins with a simple question of support: who gives it, who receives it, and what happens when support becomes unstable.</div>
-        </div>
-
-        <div class="selected-work">
-          <div class="project-kicker" data-en="work in development" data-ja="制作中の作品">work in development</div>
-          <div class="project-title">Waiting for the Season to Pass</div>
-          <div class="project-meta" data-en="ongoing · performance installation · snow environment" data-ja="継続中・パフォーマンス・インスタレーション・雪の環境">ongoing · performance installation · snow environment</div>
-          <div class="project-desc" data-en="A performance installation in development, set inside an artificial winter. A body remains with snow, objects, and time, waiting for a season to pass." data-ja="人工的な冬の中で構想しているパフォーマンス・インスタレーションです。身体は、雪、オブジェクト、時間とともに残り、季節が過ぎるのを待ちます。">A performance installation in development, set inside an artificial winter. A body remains with snow, objects, and time, waiting for a season to pass.</div>
-        </div>
-
-        <div class="selected-work">
-          <div class="project-kicker" data-en="site-responsive performance" data-ja="場所に応答するパフォーマンス">site-responsive performance</div>
-          <div class="project-title">A Celebration For Longing</div>
-          <div class="project-meta" data-en="2025 · L.A. Dance Project Gala · Union Station, Los Angeles" data-ja="2025年・L.A. Dance Project Gala・Union Station, Los Angeles">2025 · L.A. Dance Project Gala · Union Station, Los Angeles</div>
-          <div class="project-desc" data-en="A site-responsive performance at Union Station. A salaryman-like figure moves through public space, loneliness, ritual, and longing." data-ja="Union Stationで行われた、場所に応答するパフォーマンスです。サラリーマンのような人物が、公共空間、孤独、儀式、憧れの中を移動します。">A site-responsive performance at Union Station. A salaryman-like figure moves through public space, loneliness, ritual, and longing.</div>
-        </div>
-
-        <div class="selected-work">
-          <div class="project-kicker" data-en="performance" data-ja="パフォーマンス">performance</div>
-          <div class="project-title">A Guidance to Get Lost</div>
-          <div class="project-meta" data-en="2023 · Just One Eye, Los Angeles" data-ja="2023年・Just One Eye, Los Angeles">2023 · Just One Eye, Los Angeles</div>
-          <div class="project-desc" data-en="A short work about searching for direction and becoming trapped by the guidance itself." data-ja="方向を探しながら、その導きそのものに閉じ込められていく短い作品です。">A short work about searching for direction and becoming trapped by the guidance itself.</div>
-        </div>
-      </div>
-
-      <div class="work-category">
-        <div class="cat-label" data-en="choreography / projects" data-ja="振付・プロジェクト">choreography / projects</div>
+        <div class="cat-label" data-en="choreography" data-ja="振付作品">choreography</div>
         <div class="year-row"><div class="yr">2026</div><div class="entries">
-          <div><div class="entry-title">WALL—BODY</div><div class="entry-sub">LADP Presents. With architect Hiroshi Kaneko.</div></div>
-          <div><div class="entry-title">SYNOPTICO</div><div class="entry-sub">Dance and projection. Directed by ENO.</div></div>
+          <div><div class="entry-title" data-en="WALL–BODY" data-ja="WALL–BODY">WALL–BODY</div><div class="entry-sub" data-en="LADP presents. With architect Hiroshi Kaneko." data-ja="LADPプレゼンツ。建築家・金子博志とのコラボレーション。">LADP presents. With architect Hiroshi Kaneko.</div></div>
+          <div><div class="entry-title" data-en="SYNOPTICO" data-ja="SYNOPTICO">SYNOPTICO</div><div class="entry-sub" data-en="Dance and projection. Directed by ENO." data-ja="ダンスと映像投影。ENOによる演出。">Dance and projection. Directed by ENO.</div></div>
         </div></div>
         <div class="year-row"><div class="yr">2025</div><div class="entries">
-          <div><div class="entry-title">A Celebration For Longing</div><div class="entry-sub">L.A. Dance Project Gala, Union Station, Los Angeles.</div></div>
-          <div><div class="entry-title">WALL—BODY <span class="role">(in process)</span></div><div class="entry-sub">With architect Hiroshi Kaneko.</div></div>
-          <div><div class="entry-title">To Knot</div><div class="entry-sub">Everybody Dance LA! Summer Intensive, LA Dance Project.</div></div>
+          <div><div class="entry-title" data-en="A Celebration For Longing" data-ja="A Celebration For Longing（憧憬の祝祭）">A Celebration For Longing</div><div class="entry-sub" data-en="L.A. Dance Project Gala, Union Station, Los Angeles." data-ja="L.A. ダンス・プロジェクト・ガラ、ユニオン・ステーション、ロサンゼルス。">L.A. Dance Project Gala, Union Station, Los Angeles.</div></div>
+          <div><div class="entry-title" data-en="WALL–BODY (in process)" data-ja="WALL–BODY（制作中）">WALL–BODY <span class="role">(in process)</span></div><div class="entry-sub" data-en="With architect Hiroshi Kaneko." data-ja="建築家・金子博志とのコラボレーション。">With architect Hiroshi Kaneko.</div></div>
+          <div><div class="entry-title" data-en="To Knot" data-ja="To Knot（結ぶ）">To Knot</div><div class="entry-sub" data-en="Everybody Dance LA! Summer Intensive, LA Dance Project." data-ja="Everybody Dance LA! サマー・インテンシブ、LA ダンス・プロジェクト。">Everybody Dance LA! Summer Intensive, LA Dance Project.</div></div>
         </div></div>
         <div class="year-row"><div class="yr">2024</div><div class="entries">
-          <div><div class="entry-title">SHU LOVES CHAIRS: a piece about support</div><div class="entry-sub">Solo show. WAKAWAKA Warehouse, Los Angeles.</div></div>
-          <div><div class="entry-title">Untitled (This Could Be You)</div><div class="entry-sub">Work in progress. LA Dance Project.</div></div>
-          <div><div class="entry-title">An Evening of Dance and Music</div><div class="entry-sub">With Janie Taylor. Amargosa Opera House, Death Valley.</div></div>
+          <div><div class="entry-title" data-en="SHU LOVES CHAIRS: a piece about support" data-ja="SHU LOVES CHAIRS：支えについての作品">SHU LOVES CHAIRS: a piece about support</div><div class="entry-sub" data-en="Solo show. WAKAWAKA Warehouse, Los Angeles." data-ja="ソロ公演。WAKAWAKAウェアハウス、ロサンゼルス。">Solo show. WAKAWAKA Warehouse, Los Angeles.</div></div>
+          <div><div class="entry-title" data-en="Untitled (This Could Be You)" data-ja="無題（これはあなたかもしれない）">Untitled (This Could Be You)</div><div class="entry-sub" data-en="Work in progress. LA Dance Project." data-ja="制作中。LA ダンス・プロジェクト。">Work in progress. LA Dance Project.</div></div>
+          <div><div class="entry-title" data-en="An Evening of Dance and Music" data-ja="ダンスと音楽の夕べ">An Evening of Dance and Music</div><div class="entry-sub" data-en="With Janie Taylor. Amargosa Opera House, Death Valley." data-ja="ジャニー・テイラーとのコラボレーション。アマルゴサ・オペラハウス、デスバレー。">With Janie Taylor. Amargosa Opera House, Death Valley.</div></div>
         </div></div>
         <div class="year-row"><div class="yr">2023</div><div class="entries">
-          <div><div class="entry-title">Improvisational Duets</div><div class="entry-sub">God's True Cashmere × Nick Fouquet. Just One Eye, Los Angeles. With Nayomi Van Brunt.</div></div>
-          <div><div class="entry-title">A Guidance to Get Lost</div><div class="entry-sub">Just One Eye, Los Angeles.</div></div>
+          <div><div class="entry-title" data-en="Improvisational Duets" data-ja="即興デュエット">Improvisational Duets</div><div class="entry-sub" data-en="God's True Cashmere × Nick Fouquet. Just One Eye, Los Angeles. With Nayomi Van Brunt." data-ja="God's True Cashmere × ニック・フーケ。ジャスト・ワン・アイ、ロサンゼルス。ナヨミ・ヴァン・ブラントと共演。">God's True Cashmere × Nick Fouquet. Just One Eye, Los Angeles. With Nayomi Van Brunt.</div></div>
+          <div><div class="entry-title" data-en="A Guidance to Get Lost" data-ja="迷うための道しるべ">A Guidance to Get Lost</div><div class="entry-sub" data-en="Just One Eye, Los Angeles." data-ja="ジャスト・ワン・アイ、ロサンゼルス。">Just One Eye, Los Angeles.</div></div>
         </div></div>
         <div class="year-row"><div class="yr">2018</div><div class="entries">
-          <div><div class="entry-title">Enclosure</div><div class="entry-sub">Mayumi Kinouchi Ballet Studio, Kanagawa.</div></div>
-          <div><div class="entry-title">Duet</div><div class="entry-sub">Mayumi Kinouchi Ballet Studio, Kanagawa.</div></div>
-          <div><div class="entry-title">Buoyant</div><div class="entry-sub">REACH, Houston Ballet.</div></div>
+          <div><div class="entry-title" data-en="Enclosure" data-ja="Enclosure（囲い）">Enclosure</div><div class="entry-sub" data-en="Mayumi Kinouchi Ballet Studio, Kanagawa." data-ja="木ノ内真弓バレエスタジオ、神奈川。">Mayumi Kinouchi Ballet Studio, Kanagawa.</div></div>
+          <div><div class="entry-title" data-en="Duet" data-ja="デュエット">Duet</div><div class="entry-sub" data-en="Mayumi Kinouchi Ballet Studio, Kanagawa." data-ja="木ノ内真弓バレエスタジオ、神奈川。">Mayumi Kinouchi Ballet Studio, Kanagawa.</div></div>
+          <div><div class="entry-title" data-en="Buoyant" data-ja="Buoyant（浮力）">Buoyant</div><div class="entry-sub" data-en="REACH, Houston Ballet." data-ja="REACH、ヒューストン・バレエ。">REACH, Houston Ballet.</div></div>
         </div></div>
         <div class="year-row"><div class="yr">2017</div><div class="entries">
-          <div><div class="entry-title">Input / Output</div><div class="entry-sub">REACH Project, Houston Ballet.</div></div>
+          <div><div class="entry-title" data-en="Input / Output" data-ja="Input / Output（入力／出力）">Input / Output</div><div class="entry-sub" data-en="REACH Project, Houston Ballet." data-ja="REACHプロジェクト、ヒューストン・バレエ。">REACH Project, Houston Ballet.</div></div>
         </div></div>
       </div>
 
       <div class="work-category">
-        <div class="cat-label" data-en="collaborations / performance" data-ja="コラボレーション・出演">collaborations / performance</div>
+        <div class="cat-label" data-en="collaborations" data-ja="コラボレーション">collaborations</div>
         <div class="year-row"><div class="yr">2025</div><div class="entries">
-          <div><div class="entry-title">NEST</div><div class="entry-sub">Chor. Rauf &quot;Rubberlegz&quot; Yasit. CONGRESS XII.</div></div>
-          <div><div class="entry-title">Creative Lead, Everybody Dance LA! Summer Intensive</div><div class="entry-sub">LA Dance Project.</div></div>
+          <div><div class="entry-title" data-en="Creative Lead, Everybody Dance LA! Summer Intensive" data-ja="クリエイティブ・リード、Everybody Dance LA! サマー・インテンシブ">Creative Lead, Everybody Dance LA! Summer Intensive</div><div class="entry-sub" data-en="LA Dance Project." data-ja="LA ダンス・プロジェクト。">LA Dance Project.</div></div>
+          <div><div class="entry-title" data-en="NEST" data-ja="NEST">NEST</div><div class="entry-sub" data-en="Chor. Rauf &quot;Rubberlegz&quot; Yasit. CONGRESS XII." data-ja="振付：ラウフ「ラバーレグズ」ヤシット。CONGRESS XII。">Chor. Rauf "Rubberlegz" Yasit. CONGRESS XII.</div></div>
         </div></div>
         <div class="year-row"><div class="yr">2024</div><div class="entries">
-          <div><div class="entry-title">PhotoVogue</div><div class="entry-sub">Portrait by Dan Chan. Vogue Italia.</div></div>
-          <div><div class="entry-title">A Ballet Through Mud <span class="role">as Buddha</span></div><div class="entry-sub">By RZA and Platoon. Chor. Yusha Marie Sorzano.</div></div>
-          <div><div class="entry-title">SHU (周)</div><div class="entry-sub">Experimental film. Dir. Mike Schwartz. LA Dance Film Festival.</div></div>
+          <div><div class="entry-title" data-en="PhotoVogue" data-ja="PhotoVogue">PhotoVogue</div><div class="entry-sub" data-en="Portrait by Dan Chan. Vogue Italia." data-ja="ダン・チャンによるポートレート。Vogue Italia。">Portrait by Dan Chan. Vogue Italia.</div></div>
+          <div><div class="entry-title" data-en="A Ballet Through Mud — as Buddha" data-ja="A Ballet Through Mud — 仏陀役">A Ballet Through Mud <span class="role">as Buddha</span></div><div class="entry-sub" data-en="By RZA and Platoon. Chor. Yusha Marie Sorzano." data-ja="RZAとプラトゥーンによる作品。振付：ユシャ・マリー・ソルザノ。">By RZA and Platoon. Chor. Yusha Marie Sorzano.</div></div>
+          <div><div class="entry-title" data-en="SHU (周)" data-ja="SHU（周）">SHU (周)</div><div class="entry-sub" data-en="Experimental film. Dir. Mike Schwartz. LA Dance Film Festival." data-ja="実験映画。監督：マイク・シュワルツ。LAダンス映画祭選出。">Experimental film. Dir. Mike Schwartz. LA Dance Film Festival.</div></div>
         </div></div>
+      </div>
+
+      <div class="work-category">
+        <div class="cat-label" data-en="ongoing" data-ja="継続的な活動">ongoing</div>
         <div class="year-row"><div class="yr">2020–</div><div class="entries">
-          <div><div class="entry-title">Dancer, L.A. Dance Project</div><div class="entry-sub">Artistic Director Benjamin Millepied. Los Angeles.</div></div>
+          <div><div class="entry-title" data-en="Dancer, L.A. Dance Project" data-ja="ダンサー、L.A. ダンス・プロジェクト">Dancer, L.A. Dance Project</div><div class="entry-sub" data-en="Artistic Director Benjamin Millepied. Los Angeles." data-ja="芸術監督：ベンジャミン・ミルピエ。ロサンゼルス。">Artistic Director Benjamin Millepied. Los Angeles.</div></div>
         </div></div>
       </div>
     </div>
@@ -335,14 +231,10 @@
     <div class="page" id="page-about">
       <h2 class="section-head" data-en="/ about" data-ja="／ プロフィール">/ about</h2>
       <div class="pronouns">he / him</div>
-      <figure class="about-portrait">
-        <img src="images/about.jpg" alt="Portrait of Shu Kinouchi">
-        <figcaption class="about-credit" data-en="photo: Daniel Chen" data-ja="写真：Daniel Chen">photo: Daniel Chen</figcaption>
-      </figure>
       <div class="about-text">
-        <p data-en="Shu Kinouchi is a Japanese dancer and choreographer based in Los Angeles. His work places the body in direct relationship with objects and architecture, asking how support is given, refused, or transformed." data-ja="木ノ内 周は、ロサンゼルスを拠点に活動する日本人ダンサー・振付家です。身体をオブジェクトや建築と直接向き合わせ、支えがどのように与えられ、拒まれ、変化するのかを見つめています。">Shu Kinouchi is a Japanese dancer and choreographer based in Los Angeles. His work places the body in direct relationship with objects and architecture, asking how support is given, refused, or transformed.</p>
-        <p data-en="Kinouchi has performed with L.A. Dance Project since 2020, and previously danced with Houston Ballet and Tulsa Ballet. He trained at Hamburg Ballet School and the Jacqueline Kennedy Onassis School at American Ballet Theatre." data-ja="2020年よりL.A. Dance Projectに所属し、以前はHouston BalletとTulsa Balletで踊りました。Hamburg Ballet SchoolとAmerican Ballet TheatreのJacqueline Kennedy Onassis Schoolで学びました。">Kinouchi has performed with L.A. Dance Project since 2020, and previously danced with Houston Ballet and Tulsa Ballet. He trained at Hamburg Ballet School and the Jacqueline Kennedy Onassis School at American Ballet Theatre.</p>
-        <p data-en="His recent works include WALL—BODY, created with architect Hiroshi Kaneko, and SHU LOVES CHAIRS: a piece about support, created with designer Shin Okuda of WAKAWAKA." data-ja="近年の作品には、建築家Hiroshi Kanekoとの『WALL—BODY』、WAKAWAKAのデザイナーShin Okudaと発展した『SHU LOVES CHAIRS: a piece about support』があります。">His recent works include WALL—BODY, created with architect Hiroshi Kaneko, and SHU LOVES CHAIRS: a piece about support, created with designer Shin Okuda of WAKAWAKA.</p>
+        <p data-en="Shu Kinouchi is a Japanese dancer and choreographer based in Los Angeles whose work moves between performance, theater, and installation. Through choreographic installations, he uses objects, repetition, and spatial systems to explore support, intimacy, and human disconnection. His practice is shaped by cross-cultural friction and the gap between stated values and lived practice." data-ja="木ノ内　周は、ロサンゼルスを拠点に活動する日本人ダンサー・振付家。パフォーマンス、演劇、インスタレーションの領域を横断する作品を発表しています。オブジェクト、反復、空間的なシステムを用いた振付インスタレーションを通じて、サポート、親密さ、そして人間の断絶を探求。その実践は、異文化間の摩擦と、表明された価値と生きられた実践のあいだのギャップによって形成されています。">Shu Kinouchi is a Japanese dancer and choreographer based in Los Angeles whose work moves between performance, theater, and installation. Through choreographic installations, he uses objects, repetition, and spatial systems to explore support, intimacy, and human disconnection. His practice is shaped by cross-cultural friction and the gap between stated values and lived practice.</p>
+        <p data-en="Kinouchi has performed with L.A. Dance Project since 2020, and previously with Houston Ballet and Tulsa Ballet. He trained at Hamburg Ballet School and the Jacqueline Kennedy Onassis School at American Ballet Theatre. Throughout his career he has collaborated with choreographers including Aszure Barton, William Forsythe, Christopher Wheeldon, Jessica Lang, Stanton Welch, Ma Cong, Jodie Gates, and many others. With LADP, he has performed internationally in works by Benjamin Millepied, Bobbi Jene Smith & Or Schraiber, Rauf &quot;Rubberlegz&quot; Yasit, and Dimitri Chamblas, among others — appearing at the Sydney Opera House, Joyce Theater New York, Théâtre du Châtelet, Philharmonie de Paris, Dubai Opera, and the Museum of Islamic Art in Qatar." data-ja="2020年よりL.A. ダンス・プロジェクトに所属し、以前はヒューストン・バレエ、タルサ・バレエに在籍。ハンブルク・バレエ学校およびアメリカン・バレエ・シアターのジャクリーン・ケネディ・オナシス・スクールで訓練を受ける。これまでにアザール・バートン、ウィリアム・フォーサイス、クリストファー・ウィールドン、ジェシカ・ラング、スタントン・ウェルチ、マ・コン、ジョディ・ゲイツら著名な振付家と共演。LADPではベンジャミン・ミルピエ、ボビー・ジェーン・スミス＆オア・シュライバー、ラウフ「ラバーレグズ」ヤシット、ディミトリ・シャンブラスらの作品に出演し、シドニー・オペラハウス、ジョイス・シアター（NY）、シャトレ座、パリ・フィルハーモニー、ドバイ・オペラ、カタール・イスラム芸術博物館など各地で公演を行う。">Kinouchi has performed with L.A. Dance Project since 2020, and previously with Houston Ballet and Tulsa Ballet. He trained at Hamburg Ballet School and the Jacqueline Kennedy Onassis School at American Ballet Theatre. Throughout his career he has collaborated with choreographers including Aszure Barton, William Forsythe, Christopher Wheeldon, Jessica Lang, Stanton Welch, Ma Cong, Jodie Gates, and many others. With LADP, he has performed internationally in works by Benjamin Millepied, Bobbi Jene Smith & Or Schraiber, Rauf "Rubberlegz" Yasit, and Dimitri Chamblas, among others — appearing at the Sydney Opera House, Joyce Theater New York, Théâtre du Châtelet, Philharmonie de Paris, Dubai Opera, and the Museum of Islamic Art in Qatar.</p>
+        <p data-en="As a freelance artist, Kinouchi was featured in PhotoVogue in 2024 in a portrait by Dan Chan, performed a lead solo in RZA's production A Ballet Through Mud, and his performance in the experimental film SHU (周) by Mike Schwartz was selected for the LA Dance Film Festival. In 2025, he serves as Creative Lead for the Everybody Dance LA! Summer Intensive at LA Dance Project." data-ja="フリーランスのアーティストとして、2024年にダン・チャンによるポートレートでPhotoVogueに掲載。RZAのプロダクション『A Ballet Through Mud』でリードソロを担当。マイク・シュワルツによる実験映画『SHU（周）』はLAダンス映画祭に選出された。2025年にはL.A. ダンス・プロジェクトにおける「Everybody Dance LA！サマー・インテンシブ」のクリエイティブ・リードを務める。">As a freelance artist, Kinouchi was featured in PhotoVogue in 2024 in a portrait by Dan Chan, performed a lead solo in RZA's production A Ballet Through Mud, and his performance in the experimental film SHU (周) by Mike Schwartz was selected for the LA Dance Film Festival. In 2025, he serves as Creative Lead for the Everybody Dance LA! Summer Intensive at LA Dance Project.</p>
       </div>
     </div>
 
@@ -351,7 +243,7 @@
       <h2 class="section-head" data-en="/ press" data-ja="／ プレス">/ press</h2>
 
       <div class="press-category">
-        <div class="cat-label" data-en="choreography / works" data-ja="振付・作品について">choreography / works</div>
+        <div class="cat-label" data-en="on his choreography" data-ja="振付作品について">on his choreography</div>
         <div class="press-item">
           <div class="press-title"><a href="https://www.ladancechronicle.com/navigating-purpose-and-perfection-in-shu-kinouchis-wall-body/" target="_blank">Navigating purpose and perfection in Shu Kinouchi's Wall-Body</a></div>
           <div class="press-outlet">LA Dance Chronicle<br><span class="press-year">2026</span></div>
@@ -363,139 +255,42 @@
       </div>
 
       <div class="press-category">
-        <div class="cat-label" data-en="performance" data-ja="出演について">performance</div>
-        <div class="press-item">
-          <div class="press-title"><a href="https://sdwoodruff.wordpress.com/2024/11/04/millepied-la-dance-projects-romeo-and-juliet-suite-an-intense-vision-for-stage-and-cinema/" target="_blank">Romeo and Juliet Suite: An Intense Vision for Stage and Cinema</a></div>
-          <div class="press-outlet">Los Angeles Dance Review<br><span class="press-year">2024</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title"><a href="https://www.ladancechronicle.com/review-l-a-dance-projects-romeo-and-juliet/" target="_blank">Review: L.A. Dance Project's Romeo and Juliet</a></div>
-          <div class="press-outlet">LA Dance Chronicle<br><span class="press-year">2024</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title"><a href="https://www.ladancechronicle.com/exciting-spring-dances-opens-at-l-a-dance-project/" target="_blank">Exciting Spring Dances Opens at L.A. Dance Project</a></div>
-          <div class="press-outlet">LA Dance Chronicle<br><span class="press-year">2024</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title"><a href="https://sdwoodruff.wordpress.com/2024/05/15/millpied-la-dance-project-spring-dances-embraces-its-vibrant-company-of-movers/" target="_blank">Spring Dances Embraces Its Vibrant Company of Movers</a></div>
-          <div class="press-outlet">Los Angeles Dance Review<br><span class="press-year">2024</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title"><a href="https://www.ladancechronicle.com/la-dance-projects-resonance-embodies-empathy-with-the-help-of-nature-and-humanity/" target="_blank">Resonance embodies empathy with the help of nature and humanity</a></div>
-          <div class="press-outlet">LA Dance Chronicle<br><span class="press-year">2024</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title"><a href="https://stageandcinema.com/2023/10/14/missing-mountain-review-ladp/" target="_blank">The Missing Mountain</a></div>
-          <div class="press-outlet">Stage and Cinema<br><span class="press-year">2023</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title"><a href="https://shoutoutla.com/meet-shu-kinouchi-a-dancer-and-an-artist/" target="_blank">Meet Shu Kinouchi: A dancer and an artist</a></div>
-          <div class="press-outlet">ShoutOut LA<br><span class="press-year">2024</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title"><a href="https://www.houstonpress.com/arts/review-the-nutcracker-at-houston-ballet-11061414/" target="_blank">Review: The Nutcracker at Houston Ballet</a></div>
-          <div class="press-outlet">Houston Press<br><span class="press-year">2018</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title"><a href="http://www.houstonpress.com/arts/houston-ballets-new-the-nutcracker-a-superb-production-8979974" target="_blank">Houston Ballet's New Nutcracker: A Superb Production</a></div>
-          <div class="press-outlet">Houston Press<br><span class="press-year">2016</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title"><a href="https://baryshnikovarts.org/program/digital-program-baryshnikov-arts-presents-an-evening-of-new-work/" target="_blank">An Evening of New Work — digital program</a></div>
-          <div class="press-outlet">Baryshnikov Arts Center<br><span class="press-year">2025</span></div>
-        </div>
+        <div class="cat-label" data-en="on his dancing" data-ja="ダンスについて">on his dancing</div>
+        <div class="press-item"><div class="press-title"><a href="https://sdwoodruff.wordpress.com/2024/11/04/millepied-la-dance-projects-romeo-and-juliet-suite-an-intense-vision-for-stage-and-cinema/" target="_blank">Romeo and Juliet Suite: An Intense Vision for Stage and Cinema</a></div><div class="press-outlet">Los Angeles Dance Review<br><span class="press-year">2024</span></div></div>
+        <div class="press-item"><div class="press-title"><a href="https://www.ladancechronicle.com/review-l-a-dance-projects-romeo-and-juliet/" target="_blank">Review: L.A. Dance Project's Romeo and Juliet</a></div><div class="press-outlet">LA Dance Chronicle<br><span class="press-year">2024</span></div></div>
+        <div class="press-item"><div class="press-title"><a href="https://www.ladancechronicle.com/exciting-spring-dances-opens-at-l-a-dance-project/" target="_blank">Exciting Spring Dances Opens at L.A. Dance Project</a></div><div class="press-outlet">LA Dance Chronicle<br><span class="press-year">2024</span></div></div>
+        <div class="press-item"><div class="press-title"><a href="https://sdwoodruff.wordpress.com/2024/05/15/millpied-la-dance-project-spring-dances-embraces-its-vibrant-company-of-movers/" target="_blank">Spring Dances Embraces Its Vibrant Company of Movers</a></div><div class="press-outlet">Los Angeles Dance Review<br><span class="press-year">2024</span></div></div>
+        <div class="press-item"><div class="press-title"><a href="https://www.ladancechronicle.com/la-dance-projects-resonance-embodies-empathy-with-the-help-of-nature-and-humanity/" target="_blank">Resonance embodies empathy with the help of nature and humanity</a></div><div class="press-outlet">LA Dance Chronicle<br><span class="press-year">2024</span></div></div>
+        <div class="press-item"><div class="press-title"><a href="https://stageandcinema.com/2023/10/14/missing-mountain-review-ladp/" target="_blank">The Missing Mountain</a></div><div class="press-outlet">Stage and Cinema<br><span class="press-year">2023</span></div></div>
+        <div class="press-item"><div class="press-title"><a href="https://shoutoutla.com/meet-shu-kinouchi-a-dancer-and-an-artist/" target="_blank">Meet Shu Kinouchi: A dancer and an artist</a></div><div class="press-outlet">ShoutOut LA<br><span class="press-year">2024</span></div></div>
+        <div class="press-item"><div class="press-title"><a href="https://www.houstonpress.com/arts/review-the-nutcracker-at-houston-ballet-11061414/" target="_blank">Review: The Nutcracker at Houston Ballet</a></div><div class="press-outlet">Houston Press<br><span class="press-year">2018</span></div></div>
+        <div class="press-item"><div class="press-title"><a href="http://www.houstonpress.com/arts/houston-ballets-new-the-nutcracker-a-superb-production-8979974" target="_blank">Houston Ballet's New Nutcracker: A Superb Production</a></div><div class="press-outlet">Houston Press<br><span class="press-year">2016</span></div></div>
+        <div class="press-item"><div class="press-title"><a href="https://baryshnikovarts.org/program/digital-program-baryshnikov-arts-presents-an-evening-of-new-work/" target="_blank">An Evening of New Work — digital program</a></div><div class="press-outlet">Baryshnikov Arts Center<br><span class="press-year">2025</span></div></div>
       </div>
 
       <div class="press-category">
-        <div class="cat-label" data-en="features / mentions" data-ja="掲載・メンション">features / mentions</div>
-        <div class="press-item">
-          <div class="press-title"><a href="https://www.latimes.com/entertainment-arts/story/2026-06-23/ojai-music-festival-turns-80-with-help-of-esa-pekka-salonen" target="_blank">Ojai Music Festival turns 80 with help of Esa-Pekka Salonen</a></div>
-          <div class="press-outlet">Los Angeles Times<br><span class="press-year">2026</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title"><a href="https://www.nytimes.com/2024/04/01/arts/dance/review-benjamin-millepied-nico-muhly-philharmonie.html" target="_blank">Review: Millepied and Muhly, Partners in Space and Sound</a></div>
-          <div class="press-outlet">The New York Times<br><span class="press-year">2024</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title">Los Angeles Works to Build Its Dance Muscles</div>
-          <div class="press-outlet">The New York Times<br><span class="press-year">2024</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title">Love and Death in Paris</div>
-          <div class="press-outlet">The New York Times<br><span class="press-year">2022</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title">Review: L.A. Dance Project Celebrates Female Choreographers</div>
-          <div class="press-outlet">The New York Times<br><span class="press-year">2022</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title">Pierre Boulez Was a Titan of 20th Century Music. What About Now?</div>
-          <div class="press-outlet">The New York Times<br><span class="press-year">2025</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title">Dance breathes life into L.A. Dance Project's 10-year anniversary gala</div>
-          <div class="press-outlet">Los Angeles Times<br><span class="press-year">2022</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title">We interrupt your week to bring you the L.A. Dance Project serving looks</div>
-          <div class="press-outlet">Los Angeles Times<br><span class="press-year">2022</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title">How a recurring dream informed choreographer Jamar Roberts' new work</div>
-          <div class="press-outlet">Los Angeles Times<br><span class="press-year">2023</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title"><a href="https://www.theguardian.com/stage/2024/jun/17/benjamin-millepieds-romeo-and-juliet-suite-review" target="_blank">Benjamin Millepied's Romeo and Juliet Suite review</a></div>
-          <div class="press-outlet">The Guardian<br><span class="press-year">2024</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title">Cameraman and a random seagull are the stars of this love letter to the Opera House</div>
-          <div class="press-outlet">Sydney Morning Herald<br><span class="press-year">2024</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title">Benjamin Millepied propose une relecture judicieuse de Roméo et Juliette</div>
-          <div class="press-outlet">Le Monde<br><span class="press-year">2022</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title">Le chorégraphe: Benjamin Millepied</div>
-          <div class="press-outlet">Vogue France<br><span class="press-year">2022</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title">Benjamin Millepied's L.A. Dance Project Celebrates 10-Year Anniversary</div>
-          <div class="press-outlet">Hollywood Reporter<br><span class="press-year">2022</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title">L.A. Dance Project's Romeo and Juliet Suite</div>
-          <div class="press-outlet">Time Out<br><span class="press-year">2024</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title">L.A. Dance Project's 2024 Gala Spotlights the Company's Collaborative Spirit</div>
-          <div class="press-outlet">C Magazine<br><span class="press-year">2024</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title">An Ode to Lynch and Los Angeles</div>
-          <div class="press-outlet">Flaunt<br><span class="press-year">2026</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title">L.A. Dance Project Celebrates 10-Year Anniversary Gala</div>
-          <div class="press-outlet">Cultured<br><span class="press-year">2022</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title">Best of the West 2024</div>
-          <div class="press-outlet">Dance Informa<br><span class="press-year">2024</span></div>
-        </div>
-        <div class="press-item">
-          <div class="press-title">Best of Dance 2023</div>
-          <div class="press-outlet">Fjord Review<br><span class="press-year">2023</span></div>
-        </div>
+        <div class="cat-label" data-en="appearances" data-ja="掲載・出演">appearances</div>
+        <div class="press-item"><div class="press-title"><a href="https://www.latimes.com/entertainment-arts/story/2026-06-23/ojai-music-festival-turns-80-with-help-of-esa-pekka-salonen" target="_blank">Ojai Music Festival turns 80 with help of Esa-Pekka Salonen</a></div><div class="press-outlet">Los Angeles Times<br><span class="press-year">2026</span></div></div>
+        <div class="press-item"><div class="press-title"><a href="https://www.nytimes.com/2024/04/01/arts/dance/review-benjamin-millepied-nico-muhly-philharmonie.html" target="_blank">Review: Millepied and Muhly, Partners in Space and Sound</a></div><div class="press-outlet">The New York Times<br><span class="press-year">2024</span></div></div>
+        <div class="press-item"><div class="press-title">Los Angeles Works to Build Its Dance Muscles</div><div class="press-outlet">The New York Times<br><span class="press-year">2024</span></div></div>
+        <div class="press-item"><div class="press-title">Love and Death in Paris</div><div class="press-outlet">The New York Times<br><span class="press-year">2022</span></div></div>
+        <div class="press-item"><div class="press-title">Review: L.A. Dance Project Celebrates Female Choreographers</div><div class="press-outlet">The New York Times<br><span class="press-year">2022</span></div></div>
+        <div class="press-item"><div class="press-title">Pierre Boulez Was a Titan of 20th Century Music. What About Now?</div><div class="press-outlet">The New York Times<br><span class="press-year">2025</span></div></div>
+        <div class="press-item"><div class="press-title">Dance breathes life into L.A. Dance Project's 10-year anniversary gala</div><div class="press-outlet">Los Angeles Times<br><span class="press-year">2022</span></div></div>
+        <div class="press-item"><div class="press-title">We interrupt your week to bring you the L.A. Dance Project serving looks</div><div class="press-outlet">Los Angeles Times<br><span class="press-year">2022</span></div></div>
+        <div class="press-item"><div class="press-title">How a recurring dream informed choreographer Jamar Roberts' new work</div><div class="press-outlet">Los Angeles Times<br><span class="press-year">2023</span></div></div>
+        <div class="press-item"><div class="press-title"><a href="https://www.theguardian.com/stage/2024/jun/17/benjamin-millepieds-romeo-and-juliet-suite-review" target="_blank">Benjamin Millepied's Romeo and Juliet Suite review</a></div><div class="press-outlet">The Guardian<br><span class="press-year">2024</span></div></div>
+        <div class="press-item"><div class="press-title">Cameraman and a random seagull are the stars of this love letter to the Opera House</div><div class="press-outlet">Sydney Morning Herald<br><span class="press-year">2024</span></div></div>
+        <div class="press-item"><div class="press-title">Benjamin Millepied propose une relecture judicieuse de Roméo et Juliette</div><div class="press-outlet">Le Monde<br><span class="press-year">2022</span></div></div>
+        <div class="press-item"><div class="press-title">Le chorégraphe: Benjamin Millepied</div><div class="press-outlet">Vogue France<br><span class="press-year">2022</span></div></div>
+        <div class="press-item"><div class="press-title">Benjamin Millepied's L.A. Dance Project Celebrates 10-Year Anniversary</div><div class="press-outlet">Hollywood Reporter<br><span class="press-year">2022</span></div></div>
+        <div class="press-item"><div class="press-title">L.A. Dance Project's Romeo and Juliet Suite</div><div class="press-outlet">Time Out<br><span class="press-year">2024</span></div></div>
+        <div class="press-item"><div class="press-title">L.A. Dance Project's 2024 Gala Spotlights the Company's Collaborative Spirit</div><div class="press-outlet">C Magazine<br><span class="press-year">2024</span></div></div>
+        <div class="press-item"><div class="press-title">An Ode to Lynch and Los Angeles</div><div class="press-outlet">Flaunt<br><span class="press-year">2026</span></div></div>
+        <div class="press-item"><div class="press-title">L.A. Dance Project Celebrates 10-Year Anniversary Gala</div><div class="press-outlet">Cultured<br><span class="press-year">2022</span></div></div>
+        <div class="press-item"><div class="press-title">Best of the West 2024</div><div class="press-outlet">Dance Informa<br><span class="press-year">2024</span></div></div>
+        <div class="press-item"><div class="press-title">Best of Dance 2023</div><div class="press-outlet">Fjord Review<br><span class="press-year">2023</span></div></div>
       </div>
-    </div>
-
-    <!-- PRESENTING -->
-    <div class="page" id="page-presenting">
-      <h2 class="section-head" data-en="/ presenting" data-ja="／ 上演・依頼">/ presenting</h2>
-      <div class="presenting-text" data-en="Shu’s work can be presented in theaters, galleries, studios, and other spaces. Current pieces include WALL—BODY and object-based solo works. For presenting, residency, teaching, or collaboration inquiries, please contact Shu." data-ja="木ノ内 周の作品は、劇場、ギャラリー、スタジオ、その他の空間での上演に対応できます。現在紹介可能な作品には『WALL—BODY』やオブジェクトを用いたソロ作品があります。上演、レジデンシー、指導、コラボレーションについてはお問い合わせください。">Shu’s work can be presented in theaters, galleries, studios, and other spaces. Current pieces include WALL—BODY and object-based solo works. For presenting, residency, teaching, or collaboration inquiries, please contact Shu.</div>
-      <div class="project-links"><a onclick="show('contact',getNav('contact'))" data-en="→ contact" data-ja="→ お問い合わせ">→ contact</a></div>
     </div>
 
     <!-- CONTACT -->
@@ -503,7 +298,7 @@
       <h2 class="section-head" data-en="/ contact" data-ja="／ お問い合わせ">/ contact</h2>
       <div class="contact-block">
         <div class="contact-label" data-en="email" data-ja="メール">email</div>
-        <div class="contact-val"><a href="mailto:shukinouchi@gmail.com">email Shu</a></div>
+        <div class="contact-val">shukinouchi"at"gmail.com</div>
       </div>
       <div class="contact-block">
         <div class="contact-label" data-en="social" data-ja="ソーシャル">social</div>
@@ -517,20 +312,29 @@
         <div class="contact-label" data-en="based in" data-ja="拠点">based in</div>
         <div class="contact-val" data-en="Los Angeles, California" data-ja="カリフォルニア州ロサンゼルス">Los Angeles, California</div>
       </div>
-      <form class="contact-form" action="https://formspree.io/f/mbdvbpeo" method="POST">
-        <div class="cf-field"><label data-en="name" data-ja="お名前">name</label><input type="text" name="name" class="cfp" data-en-p="Your name" data-ja-p="お名前" placeholder="Your name" required/></div>
-        <div class="cf-field"><label data-en="email" data-ja="メールアドレス">email</label><input type="email" name="email" class="cfp" data-en-p="your@email.com" data-ja-p="メールアドレス" placeholder="your@email.com" required/></div>
-        <div class="cf-field"><label data-en="message" data-ja="メッセージ">message</label><textarea rows="4" name="message" class="cfp" data-en-p="Commission, collaboration, residency…" data-ja-p="ご依頼・コラボレーション・レジデンシーなど…" placeholder="Commission, collaboration, residency…" required></textarea></div>
-        <input type="hidden" name="_subject" value="Website inquiry for Shu Kinouchi">
-        <button class="cf-submit" type="submit" data-en="send" data-ja="送信">send</button>
+      <form id="contact-form" action="https://formspree.io/f/mbdvbpeo" method="POST" class="contact-form">
+        <div class="cf-field">
+          <label data-en="name" data-ja="お名前">name</label>
+          <input type="text" name="name" placeholder="Your name" required/>
+        </div>
+        <div class="cf-field">
+          <label data-en="email" data-ja="メールアドレス">email</label>
+          <input type="email" name="email" placeholder="your@email.com" required/>
+        </div>
+        <div class="cf-field">
+          <label data-en="message" data-ja="メッセージ">message</label>
+          <textarea name="message" rows="4" placeholder="Commission, collaboration, residency…" required></textarea>
+        </div>
+        <button type="submit" class="cf-submit" data-en="send" data-ja="送信">send</button>
       </form>
+      <p class="form-success" id="form-success" data-en="Thank you — message received." data-ja="ありがとうございます。メッセージを受け取りました。">Thank you — message received.</p>
     </div>
 
   </main>
 </div>
 
 <footer>
-  <span>© 2026 Shu Kinouchi 木ノ内 周</span>
+  <span>© 2026 Shu Kinouchi 木ノ内　周</span>
   <div class="footer-links">
     <a href="https://www.instagram.com/shushuagogo/" target="_blank">instagram</a>
     <a href="https://www.youtube.com/@shu1992" target="_blank">youtube</a>
@@ -547,10 +351,11 @@
     document.getElementById('loc').textContent=lang==='ja'?'ロサンゼルス':'los angeles';
     document.querySelectorAll('[data-en]').forEach(el=>{
       if(el.tagName==='INPUT'||el.tagName==='TEXTAREA')return;
-      const v=el.getAttribute('data-'+lang);if(v!==null)el.innerHTML=v;
-    });
-    document.querySelectorAll('.cfp').forEach(el=>{
-      const v=el.getAttribute('data-'+lang+'-p');if(v)el.placeholder=v;
+      const v=el.getAttribute('data-'+lang);
+      if(v!==null){
+        if(el.tagName==='BUTTON'||el.tagName==='A'){el.textContent=v;}
+        else{el.innerHTML=v;}
+      }
     });
     document.getElementById('fsub').textContent=document.getElementById('fsub').getAttribute('data-'+lang);
   }
@@ -562,6 +367,21 @@
   }
   function getNav(s){return document.querySelector('nav a[onclick*="\''+s+'\'"]');}
   document.querySelectorAll('nav a,.home-links a').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
+
+  const form=document.getElementById('contact-form');
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+    const btn=form.querySelector('.cf-submit');
+    btn.textContent='…';btn.disabled=true;
+    const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+    if(res.ok){
+      form.style.display='none';
+      const s=document.getElementById('form-success');
+      s.style.display='block';
+    } else {
+      btn.textContent='try again';btn.disabled=false;
+    }
+  });
 </script>
 </body>
 </html>
