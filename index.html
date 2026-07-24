@@ -28,38 +28,26 @@
     body.ja{font-family:var(--jp);}
     a{color:inherit;text-decoration:none;}
     a:hover{text-decoration:underline;}
-
-    /* LAYOUT */
     .layout{display:grid;grid-template-columns:220px 1fr;min-height:100vh;}
-
-    /* SIDEBAR */
     aside{border-right:1px solid var(--rule);padding:2.5rem 2rem 2.5rem 2.5rem;display:flex;flex-direction:column;justify-content:space-between;position:sticky;top:0;height:100vh;background:rgba(250,248,243,.18);backdrop-filter:blur(6px);}
     .site-name{font-family:var(--serif);font-style:italic;font-size:1.05rem;line-height:1.45;cursor:pointer;}
     .site-name .jp{font-family:var(--jp);font-style:normal;font-weight:300;font-size:.92rem;color:var(--muted);display:block;margin-top:2px;}
     body.ja .site-name{font-style:normal;font-weight:300;}
-
     nav{margin-top:2.5rem;display:flex;flex-direction:column;gap:.9rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;}
     body.ja nav{font-family:var(--jp);font-size:.8rem;letter-spacing:.02em;}
     nav a{color:var(--muted);transition:color .15s;}
     nav a:hover,nav a.active{color:var(--ink);text-decoration:none;}
-
     .aside-footer{font-family:var(--mono);font-size:.62rem;color:var(--muted);letter-spacing:.04em;line-height:1.7;}
     body.ja .aside-footer{font-family:var(--jp);}
-
-    /* MAIN */
     main{padding:2.5rem 3rem 5rem;max-width:740px;}
-
     .topline{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--rule);padding-bottom:1.2rem;margin-bottom:3rem;font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:.04em;}
     .lang-toggle{display:flex;gap:.5rem;align-items:center;}
     .lang-btn{font-family:var(--mono);font-size:.65rem;letter-spacing:.06em;background:none;border:none;cursor:pointer;color:var(--muted);padding:0;}
     .lang-btn.active{color:var(--ink);border-bottom:1px solid var(--ink);}
     .lang-sep{color:var(--rule);}
-
-    /* HOME */
     .home-title{font-size:clamp(2rem,4vw,2.8rem);font-weight:400;line-height:1.15;margin-bottom:2rem;font-style:italic;color:var(--ink);}
     body.ja .home-title{font-style:normal;font-weight:300;line-height:1.5;}
     .home-intro{font-size:1.05rem;line-height:1.8;color:#4a3d33;max-width:520px;margin-bottom:2rem;}
-
     .upcoming-block{border-top:1px solid var(--rule);padding-top:1.2rem;margin-bottom:2rem;}
     .upcoming-head{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem;}
     body.ja .upcoming-head{font-family:var(--jp);text-transform:none;letter-spacing:.06em;}
@@ -73,21 +61,15 @@
     .up-title a:hover{text-decoration:underline;}
     .up-venue{font-family:var(--mono);font-size:.6rem;color:var(--muted);margin-top:.1rem;}
     body.ja .up-venue{font-family:var(--jp);}
-
     .home-links{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;display:flex;flex-direction:column;gap:.6rem;}
     body.ja .home-links{font-family:var(--jp);font-size:.82rem;}
     .home-links a{color:var(--muted);cursor:pointer;}
     .home-links a:hover{color:var(--ink);}
-
-    /* PAGES */
     .page{display:none;}
     .page.active{display:block;animation:fadeIn .2s ease;}
     @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
-
     h2.section-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem;}
     body.ja h2.section-head{font-family:var(--jp);letter-spacing:.06em;text-transform:none;}
-
-    /* WORK */
     .work-category{margin-bottom:3.5rem;}
     .cat-label{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:.6rem;}
     body.ja .cat-label{font-family:var(--jp);text-transform:none;letter-spacing:.06em;}
@@ -99,14 +81,10 @@
     .entry-sub{font-size:.8rem;color:var(--muted);line-height:1.5;margin-top:.1rem;}
     body.ja .entry-sub{font-family:var(--jp);}
     .role{font-style:normal;font-size:.78rem;color:var(--muted);}
-
-    /* ABOUT */
     .pronouns{font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;color:var(--muted);margin-bottom:1.8rem;}
     .about-text{font-size:1.05rem;line-height:1.85;color:#4a3d33;max-width:540px;}
     .about-text p+p{margin-top:1.2rem;}
     body.ja .about-text{line-height:2.1;}
-
-    /* PRESS */
     .press-category{margin-bottom:3rem;}
     .press-item{border-bottom:1px solid var(--rule);padding:.85rem 0;display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:baseline;}
     .press-item:first-of-type{border-top:1px solid var(--rule);}
@@ -114,8 +92,6 @@
     .press-title a:hover{text-decoration:underline;}
     .press-outlet{font-family:var(--mono);font-size:.62rem;color:var(--muted);letter-spacing:.04em;white-space:nowrap;text-align:right;}
     .press-year{font-family:var(--mono);font-size:.6rem;color:var(--muted);}
-
-    /* CONTACT */
     .contact-block{margin-bottom:2.5rem;}
     .contact-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
     body.ja .contact-label{font-family:var(--jp);text-transform:none;}
@@ -129,28 +105,12 @@
     .cf-submit{align-self:flex-start;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;background:none;border:1px solid var(--ink);padding:.55rem 1.4rem;cursor:pointer;color:var(--ink);transition:background .2s,color .2s;}
     .cf-submit:hover{background:var(--ink);color:var(--paper);}
     .form-success{display:none;font-family:var(--mono);font-size:.72rem;color:var(--muted);letter-spacing:.04em;padding:1rem 0;}
-
     footer{font-family:var(--mono);font-size:.62rem;color:var(--muted);letter-spacing:.04em;line-height:1.7;}
     body.ja footer{font-family:var(--jp);}
-
-    /* MOBILE */
     @media (max-width: 780px){
-      body{
-        background:
-          radial-gradient(circle at 100% 100%, rgba(201,130,82,.34) 0%, rgba(228,198,167,.20) 30%, rgba(250,248,243,0) 62%),
-          linear-gradient(150deg,var(--paper) 0%,var(--paper2) 66%,var(--kuchiba-soft) 100%);
-        font-size:1rem;
-      }
+      body{background:radial-gradient(circle at 100% 100%, rgba(201,130,82,.34) 0%, rgba(228,198,167,.20) 30%, rgba(250,248,243,0) 62%),linear-gradient(150deg,var(--paper) 0%,var(--paper2) 66%,var(--kuchiba-soft) 100%);font-size:1rem;}
       .layout{display:block;min-height:100vh;}
-      aside{
-        position:static;
-        height:auto;
-        border-right:0;
-        border-bottom:1px solid rgba(222,203,184,.72);
-        padding:1.25rem 1.25rem 1rem;
-        background:transparent;
-        backdrop-filter:none;
-      }
+      aside{position:static;height:auto;border-right:0;border-bottom:1px solid rgba(222,203,184,.72);padding:1.25rem 1.25rem 1rem;background:transparent;backdrop-filter:none;}
       .site-name{font-size:1rem;}
       nav{margin-top:1.1rem;flex-direction:row;flex-wrap:wrap;gap:.55rem 1rem;}
       .aside-footer{margin-top:1.1rem;}
@@ -164,7 +124,6 @@
       .press-item{grid-template-columns:1fr;gap:.35rem;}
       .press-outlet{text-align:left;white-space:normal;}
     }
-
   </style>
 </head>
 <body>
@@ -203,7 +162,26 @@
       <p class="home-intro" data-en="Shu Kinouchi is a Japanese dancer and choreographer based in Los Angeles whose work moves between performance, theater, and installation. Through choreographic installations, he uses objects, repetition, and spatial systems to explore support, intimacy, and human disconnection." data-ja="木ノ内 周は、ロサンゼルスを拠点に活動する日本人ダンサー・振付家。パフォーマンス、演劇、インスタレーションの領域を横断する作品を発表しています。オブジェクト、反復、空間的なシステムを用いた振付インスタレーションを通じて、サポート、親密さ、そして人間の断絶を探求しています。">Shu Kinouchi is a Japanese dancer and choreographer based in Los Angeles whose work moves between performance, theater, and installation. Through choreographic installations, he uses objects, repetition, and spatial systems to explore support, intimacy, and human disconnection.</p>
 
       <div class="upcoming-block">
-        <div class="upcoming-head" data-en="now & upcoming" data-ja="近況・今後の予定">now & upcoming</div>
+        <div class="upcoming-head" data-en="now &amp; upcoming" data-ja="近況・今後の予定">now &amp; upcoming</div>
+
+        <!-- ============================================================
+             NOW & UPCOMING — THIS IS WHERE YOU EDIT
+             
+             To ADD an event, copy one block below and paste it.
+             To REMOVE an event, delete the block.
+             To EDIT, just change the text between the tags.
+
+             FORMAT PER EVENT:
+             - up-date  : the date or date range  e.g.  Jul 16  /  Jul 27–Aug 9
+             - up-role  : what you're doing        e.g.  dancing / teaching / choreography
+             - up-title : name of event (can include a link — see examples below)
+             - up-venue : location or organization
+
+             ADDING A LINK: replace the plain text inside up-title with:
+             <a href="https://YOUR-URL" target="_blank">Event Name</a>
+        ============================================================ -->
+
+        <!-- EVENT 1 -->
         <div class="upcoming-row">
           <div class="up-date">Jul 16</div>
           <div class="up-role" data-en="dancing" data-ja="出演">dancing</div>
@@ -212,6 +190,8 @@
             <div class="up-venue" data-en="Montecito, CA" data-ja="カリフォルニア州モンテシート">Montecito, CA</div>
           </div>
         </div>
+
+        <!-- EVENT 2 -->
         <div class="upcoming-row">
           <div class="up-date">Jul 27–Aug 9</div>
           <div class="up-role" data-en="teaching" data-ja="指導">teaching</div>
@@ -220,6 +200,8 @@
             <div class="up-venue" data-en="LA Dance Project" data-ja="LA ダンス・プロジェクト">LA Dance Project</div>
           </div>
         </div>
+
+        <!-- EVENT 3 -->
         <div class="upcoming-row">
           <div class="up-date">Mar 13, 2027</div>
           <div class="up-role" data-en="choreography" data-ja="振付">choreography</div>
@@ -228,6 +210,11 @@
             <div class="up-venue" data-en="Northridge, CA" data-ja="カリフォルニア州ノースリッジ">Northridge, CA</div>
           </div>
         </div>
+
+        <!-- ============================================================
+             END OF NOW & UPCOMING
+        ============================================================ -->
+
       </div>
 
       <div class="home-links">
@@ -241,7 +228,6 @@
     <!-- WORK -->
     <div class="page" id="page-work">
       <h2 class="section-head" data-en="/ work" data-ja="／ 作品">/ work</h2>
-
       <div class="work-category">
         <div class="cat-label" data-en="choreography" data-ja="振付作品">choreography</div>
         <div class="year-row"><div class="yr">2026</div><div class="entries">
@@ -271,7 +257,6 @@
           <div><div class="entry-title" data-en="Input / Output" data-ja="Input / Output（入力／出力）">Input / Output</div><div class="entry-sub" data-en="REACH Project, Houston Ballet." data-ja="REACHプロジェクト、ヒューストン・バレエ。">REACH Project, Houston Ballet.</div></div>
         </div></div>
       </div>
-
       <div class="work-category">
         <div class="cat-label" data-en="collaborations" data-ja="コラボレーション">collaborations</div>
         <div class="year-row"><div class="yr">2025</div><div class="entries">
@@ -284,7 +269,6 @@
           <div><div class="entry-title" data-en="SHU (周)" data-ja="SHU（周）">SHU (周)</div><div class="entry-sub" data-en="Experimental film. Dir. Mike Schwartz. LA Dance Film Festival." data-ja="実験映画。監督：マイク・シュワルツ。LAダンス映画祭選出。">Experimental film. Dir. Mike Schwartz. LA Dance Film Festival.</div></div>
         </div></div>
       </div>
-
       <div class="work-category">
         <div class="cat-label" data-en="ongoing" data-ja="継続的な活動">ongoing</div>
         <div class="year-row"><div class="yr">2020–</div><div class="entries">
@@ -401,7 +385,7 @@
     document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));
     if(el)el.classList.add('active');
   }
-  function getNav(s){return document.querySelector('nav a[onclick*="\''+s+'\'"]');}
+  function getNav(s){return document.querySelector('nav a[onclick*="''+s+''"]');}
   document.querySelectorAll('nav a,.home-links a').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
   const form=document.getElementById('contact-form');
   form.addEventListener('submit',async function(e){
